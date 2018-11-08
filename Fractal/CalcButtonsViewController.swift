@@ -270,6 +270,9 @@ class ButtonsPage2: UIViewController {
         case "Rand":
             currentButtonPressed = "Random()"
             calcButtonDelegate?.sendPressed(currentButtonPressed)
+        case "∛":
+            currentButtonPressed = "∛"
+            calcButtonDelegate?.sendPressed(currentButtonPressed)
         default:
             print("default")
         }
