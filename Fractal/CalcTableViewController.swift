@@ -96,7 +96,6 @@ class CalcTableViewController: UITableViewController {
                     if ans == "0.0" || ans == "0" {
                         
                     } else if Double(ans)?.truncatingRemainder(dividingBy: 1) == 0 {
-                        if Double(ans)!.truncatingRemainder(dividingBy: 1) == 0 {
                             if Double(ans)! > Double(Int.max) {
                                 sessionCalculations[0].calc = "Number too large"
                                 sessionCalculations[0].result = "　"
@@ -111,7 +110,6 @@ class CalcTableViewController: UITableViewController {
                         sessionCalculations[0].calc = "(" + String(Double(ans)!) + ")"
                         actualCalc = "(" + String(Double(ans)!) + ")"
                         self.tableView.reloadData()
-                        }
                     }
                 case "log2(":
                     sessionCalculations[0].calc = "log₂("
@@ -147,7 +145,6 @@ class CalcTableViewController: UITableViewController {
                             if Double(result!)! > Double(Int.max) {
                                 sessionCalculations[0].calc = "Number too large"
                                 sessionCalculations[0].result = "　"
-                                ans = "0"
                                 self.tableView.reloadData()
                             } else {
                                 result = String(Int(Double(result!)!))
@@ -169,6 +166,13 @@ class CalcTableViewController: UITableViewController {
                                 didDoMath = true
                                 self.tableView.reloadData()
                             }
+                        } else {
+                            sessionCalculations[0].result = sessionCalculations[0].calc
+                            sessionCalculations[0].calc = String(result!)
+                            actualCalc = String(result!)
+                            ans = String(result!)
+                            didDoMath = true
+                            self.tableView.reloadData()
                         }
                         }
                  case "Del":
