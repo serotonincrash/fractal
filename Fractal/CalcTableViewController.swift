@@ -12,7 +12,7 @@ import ReverseExtension
 class CalcTableViewController: UITableViewController {
     var calculations: [Calculation]! = Calculation.loadFromFile() ?? []
     var sessionCalculations = [Calculation(calc: "0", result: "　")]
-    var ans: Double = 0
+    var ans: String = "0"
     var didDoMath: Bool = true
     var needsSpace = false
     var actualCalc = "0"
@@ -46,14 +46,14 @@ class CalcTableViewController: UITableViewController {
                     if result == "" || result == "nan" {
                         sessionCalculations[0].calc = "Error"
                         sessionCalculations[0].result = "　"
-                        ans = 0
+                        ans = "0"
                         self.tableView.reloadData()
                         sessionCalculations[0] = Calculation(calc: "0", result: "　")
                         actualCalc = "0"
                     } else if result! == "1.63312393531954e+16" {
                         sessionCalculations[0].result = "Number too large/Division by zero"
                         sessionCalculations[0].calc = "0"
-                        ans = 0
+                        ans = "0"
                         actualCalc = "0"
                         self.tableView.reloadData()
                     } else {
@@ -63,7 +63,7 @@ class CalcTableViewController: UITableViewController {
                         sessionCalculations[0].result = sessionCalculations[0].calc
                         sessionCalculations[0].calc = String(Double(result!)!.truncate(places: 9))
                         actualCalc = String(result!)
-                        ans = Double(result!)!
+                        ans = String(Double(result!)!)
                         didDoMath = false
                         self.tableView.reloadData()
                     }
@@ -90,12 +90,15 @@ class CalcTableViewController: UITableViewController {
                     actualCalc = "0"
                     self.tableView.reloadData()
                 case "Ans":
-                    if ans == 0.0 {
+                    if ans == "0.0" || ans == "0" {
                         
+                    } else if Double(ans)?.truncatingRemainder(dividingBy: 1) == 0 {
+                        sessionCalculations[0].calc = "(" + String(Int(ans)!) + ")"
+                        actualCalc = "(" + String(Int(ans)!) + ")"
+                        self.tableView.reloadData()
                     } else {
-                        
-                        sessionCalculations[0].calc = "(" + String(ans.truncate(places: 9)) + ")"
-                        actualCalc = "(" + String(ans.truncate(places: 9)) + ")"
+                        sessionCalculations[0].calc = "(" + String(Double(ans)!.truncate(places: 9)) + ")"
+                        actualCalc = "(" + String(Double(ans)!.truncate(places: 9)) + ")"
                         self.tableView.reloadData()
                     }
                 case "log2(":
@@ -126,12 +129,12 @@ class CalcTableViewController: UITableViewController {
                     if result == "" || result == "nan" {
                         sessionCalculations[0].result = "Error"
                         sessionCalculations[0].calc = "0"
-                        ans = 0
+                        ans = "0"
                         self.tableView.reloadData()
                     } else if result! == "1.63312393531954e+16" {
                         sessionCalculations[0].result = "Number too large/Division by zero"
                         sessionCalculations[0].calc = "0"
-                        ans = 0
+                        ans = "0"
                         actualCalc = "0"
                         self.tableView.reloadData()
                     } else {
@@ -146,12 +149,12 @@ class CalcTableViewController: UITableViewController {
                         if intResult != 0 {
                             sessionCalculations[0].calc = String(intResult)
                             actualCalc = String(intResult)
-                            ans = Double(intResult).truncate(places: 5)
+                            ans = String(intResult)
                             calculations.append(sessionCalculations[0])
                             self.tableView.reloadData()
                         } else {
                             sessionCalculations[0].calc = String(result!)
-                            ans = Double(result!)!
+                            ans = String(result!)
                             actualCalc = String(result!)
                             calculations.append(sessionCalculations[0])
                             self.tableView.reloadData()
@@ -179,10 +182,16 @@ class CalcTableViewController: UITableViewController {
                     actualCalc = "0"
                     self.tableView.reloadData()
                  case "Ans":
-                    if ans != 0.0 {
-                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(ans.truncate(places: 9)) + ")"
-                        actualCalc = actualCalc + "(" + String(ans.truncate(places: 9)) + ")"
+                    if ans == "0.0" || ans == "0" {
+                        
                         self.tableView.reloadData()
+                    } else if Double(ans)!.remainder(dividingBy: 1) == 0 {
+                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Int(ans)!) + ")"
+                        actualCalc = actualCalc + "(" + String(Int(ans)!) + ")"
+                        self.tableView.reloadData()
+                    } else {
+                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Double(ans)!.truncate(places: 9)) + ")"
+                        actualCalc = actualCalc + "(" + String(Double(ans)!.truncate(places: 9)) + ")"
                     }
                  case "e()":
                     sessionCalculations[0].calc = sessionCalculations[0].calc + "e"
@@ -201,7 +210,6 @@ class CalcTableViewController: UITableViewController {
                         actualCalc = actualCalc + data
                         self.tableView.reloadData()
                 }
-                
             }
         }
         
