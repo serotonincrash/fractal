@@ -73,7 +73,7 @@ class CalcViewController: UIViewController, CalcButtonDelegate {
         } else if segue.identifier == "histSegue" {
             let nav = segue.destination as! UINavigationController
             let dest = nav.viewControllers[0] as! CalcHistoryTableViewController
-            dest.calculations = Calculation.loadFromFile()
+            dest.calculations = Calculation.loadFromFile() ?? []
         }
     }
 

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
-                                <rect key="frame" x="0.0" y="416" width="375" height="251"/>
+                                <rect key="frame" x="0.0" y="292" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QIC-JF-eN1" secondAttribute="height" multiplier="1:1" id="kka-c8-8uS"/>
                                 </constraints>
@@ -27,7 +27,7 @@
                                     <segue destination="0QL-45-mdF" kind="embed" identifier="buttonsEmbed" id="tKE-eU-E3K"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ztq-Na-MAK" customClass="calcWindowContainerView" customModule="Fractal" customModuleProvider="target">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztq-Na-MAK" customClass="calcWindowContainerView" customModule="Fractal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="40" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ztq-Na-MAK" secondAttribute="height" multiplier="1:1" id="oGW-7Q-OX1"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xku-5g-FJQ">
-                                <rect key="frame" x="315" y="65" width="50" height="30"/>
+                                <rect key="frame" x="315" y="30" width="50" height="30"/>
                                 <state key="normal" title="History">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -55,7 +55,7 @@
                             <constraint firstItem="Ztq-Na-MAK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IFQ-vt-pUY"/>
                             <constraint firstItem="Ztq-Na-MAK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ZNU-or-amm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ztq-Na-MAK" secondAttribute="trailing" id="fmL-Cv-8AV"/>
-                            <constraint firstItem="Xku-5g-FJQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="qYk-LV-s29"/>
+                            <constraint firstItem="Xku-5g-FJQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qYk-LV-s29"/>
                             <constraint firstAttribute="trailing" secondItem="Xku-5g-FJQ" secondAttribute="trailing" constant="10" id="wM8-ke-kw0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

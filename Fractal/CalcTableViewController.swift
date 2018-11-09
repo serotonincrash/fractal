@@ -14,13 +14,13 @@ class CalcTableViewController: UITableViewController {
     var sessionCalculations = [Calculation(calc: "0", result: "　")]
     var ans: String = "0"
     var didDoMath: Bool = true
-    var needsSpace = false
     var actualCalc = "0"
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.allowsSelection = false
         tableView.bounces = false
+        Calculation.saveToFile(calcs: [])
         evaluator.angleMeasurementMode = .degrees
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
