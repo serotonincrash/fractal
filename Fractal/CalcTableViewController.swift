@@ -52,12 +52,22 @@ class CalcTableViewController: UITableViewController {
                         actualCalc = "0"
                     } else {
                         if Double(result!)!.truncatingRemainder(dividingBy: 1) == 0 {
-                            result = String(Int(Double(result!)!))
+                            if Double(result!)! > Double(Int.max) {
+                                sessionCalculations[0].calc = "Number too large"
+                                sessionCalculations[0].result = "　"
+                                ans = "0"
+                                self.tableView.reloadData()
+                                sessionCalculations[0] = Calculation(calc: "0", result: "　")
+                                actualCalc = "0"
+                        } else {
+                                result = String(Int(Double(result!)!))
+                            }
                         }
                         sessionCalculations[0].result = sessionCalculations[0].calc
                         sessionCalculations[0].calc = String(result!)
                         actualCalc = String(result!)
                         ans = String(result!)
+                        didDoMath = true
                         self.tableView.reloadData()
                     }
                     
@@ -86,13 +96,24 @@ class CalcTableViewController: UITableViewController {
                     if ans == "0.0" || ans == "0" {
                         
                     } else if Double(ans)?.truncatingRemainder(dividingBy: 1) == 0 {
-                        sessionCalculations[0].calc = "(" + String(Int(ans)!) + ")"
-                        actualCalc = "(" + String(Int(ans)!) + ")"
-                        self.tableView.reloadData()
+                        if Double(ans)!.truncatingRemainder(dividingBy: 1) == 0 {
+                            if Double(ans)! > Double(Int.max) {
+                                sessionCalculations[0].calc = "Number too large"
+                                sessionCalculations[0].result = "　"
+                                ans = "0"
+                                self.tableView.reloadData()
+                                sessionCalculations[0] = Calculation(calc: "0", result: "　")
+                                actualCalc = "0"
+                            } else {
+                                sessionCalculations[0].calc = "(" + String(Int(ans)!) + ")"
+                                actualCalc = "(" + String(Int(ans)!) + ")"
+                                self.tableView.reloadData()
+                            }
                     } else {
-                        sessionCalculations[0].calc = "(" + String(Double(ans)!.truncate(places: 9)) + ")"
-                        actualCalc = "(" + String(Double(ans)!.truncate(places: 9)) + ")"
+                        sessionCalculations[0].calc = "(" + String(Double(ans)!) + ")"
+                        actualCalc = "(" + String(Double(ans)!) + ")"
                         self.tableView.reloadData()
+                        }
                     }
                 case "log2(":
                     sessionCalculations[0].calc = "log₂("
@@ -117,7 +138,6 @@ class CalcTableViewController: UITableViewController {
                  case "=":
                     didDoMath = true
                     var result = parseMath(calc: actualCalc)
-                    var intResult = 0
                     print(result!)
                     if result == "" || result == "nan" {
                         sessionCalculations[0].result = "Error"
@@ -126,7 +146,15 @@ class CalcTableViewController: UITableViewController {
                         self.tableView.reloadData()
                     } else {
                         if Double(result!)!.truncatingRemainder(dividingBy: 1) == 0 {
-                            result = String(Int(Double(result!)!))
+                            if Double(result!)! > Double(Int.max) {
+                                sessionCalculations[0].calc = "Number too large"
+                                sessionCalculations[0].result = "　"
+                                ans = "0"
+                                self.tableView.reloadData()
+                            } else {
+                                result = String(Int(Double(result!)!))
+                            }
+                            
                         }
                         sessionCalculations[0].result = sessionCalculations[0].calc
                         sessionCalculations[0].calc = String(result!)
@@ -160,12 +188,21 @@ class CalcTableViewController: UITableViewController {
                     if ans == "0.0" || ans == "0" {
                         self.tableView.reloadData()
                     } else if Double(ans)!.remainder(dividingBy: 1) == 0 {
-                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Int(ans)!) + ")"
-                        actualCalc = actualCalc + "(" + String(Int(ans)!) + ")"
-                        self.tableView.reloadData()
+                        if Double(ans)! > Double(Int.max) {
+                            sessionCalculations[0].calc = "Number too large"
+                            sessionCalculations[0].result = "　"
+                            ans = "0"
+                            self.tableView.reloadData()
+                            actualCalc = "0"
+                        } else {
+                            sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Int(ans)!) + ")"
+                            actualCalc = actualCalc + "(" + String(Int(ans)!) + ")"
+                            self.tableView.reloadData()
+                        }
                     } else {
-                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Double(ans)!.truncate(places: 9)) + ")"
-                        actualCalc = actualCalc + "(" + String(Double(ans)!.truncate(places: 9)) + ")"
+                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Double(ans)!) + ")"
+                        actualCalc = actualCalc + "(" + String(Double(ans)!) + ")"
+                        self.tableView.reloadData()
                     }
                  case "e()":
                     sessionCalculations[0].calc = sessionCalculations[0].calc + "e"
