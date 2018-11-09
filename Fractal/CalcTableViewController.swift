@@ -50,20 +50,14 @@ class CalcTableViewController: UITableViewController {
                         self.tableView.reloadData()
                         sessionCalculations[0] = Calculation(calc: "0", result: "　")
                         actualCalc = "0"
-                    } else if result! == "1.63312393531954e+16" {
-                        sessionCalculations[0].result = "Number too large/Division by zero"
-                        sessionCalculations[0].calc = "0"
-                        ans = "0"
-                        actualCalc = "0"
-                        self.tableView.reloadData()
                     } else {
                         if Double(result!)!.truncatingRemainder(dividingBy: 1) == 0 {
                             result = String(Int(Double(result!)!))
                         }
                         sessionCalculations[0].result = sessionCalculations[0].calc
-                        sessionCalculations[0].calc = String(Double(result!)!.truncate(places: 9))
+                        sessionCalculations[0].calc = String(result!)
                         actualCalc = String(result!)
-                        ans = String(Double(result!)!)
+                        ans = String(result!)
                         self.tableView.reloadData()
                     }
                     
