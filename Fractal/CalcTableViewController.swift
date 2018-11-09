@@ -138,7 +138,7 @@ class CalcTableViewController: UITableViewController {
                         sessionCalculations[0].calc = String(result!)
                         actualCalc = String(result!)
                         ans = String(result!)
-                        didDoMath = false
+                        didDoMath = true
                         self.tableView.reloadData()
                         }
                  case "Del":
@@ -162,11 +162,10 @@ class CalcTableViewController: UITableViewController {
                     actualCalc = "0"
                     self.tableView.reloadData()
                  case "Ans":
+                    print(ans)
                     if ans == "0.0" || ans == "0" {
-                        
                         self.tableView.reloadData()
                     } else if Double(ans)!.remainder(dividingBy: 1) == 0 {
-                        
                         sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Int(ans)!) + ")"
                         actualCalc = actualCalc + "(" + String(Int(ans)!) + ")"
                         self.tableView.reloadData()
