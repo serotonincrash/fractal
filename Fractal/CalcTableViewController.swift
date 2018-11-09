@@ -33,7 +33,7 @@ class CalcTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     func evalData(data: String) {
-        
+        print("didDoCalc: " + String(didDoMath))
         if true {
             if sessionCalculations[0].calc == "0" {
                 didDoMath = true
@@ -64,7 +64,6 @@ class CalcTableViewController: UITableViewController {
                         sessionCalculations[0].calc = String(Double(result!)!.truncate(places: 9))
                         actualCalc = String(result!)
                         ans = String(Double(result!)!)
-                        didDoMath = false
                         self.tableView.reloadData()
                     }
                     
@@ -131,36 +130,17 @@ class CalcTableViewController: UITableViewController {
                         sessionCalculations[0].calc = "0"
                         ans = "0"
                         self.tableView.reloadData()
-                    } else if result! == "1.63312393531954e+16" {
-                        sessionCalculations[0].result = "Number too large/Division by zero"
-                        sessionCalculations[0].calc = "0"
-                        ans = "0"
-                        actualCalc = "0"
-                        self.tableView.reloadData()
                     } else {
                         if Double(result!)!.truncatingRemainder(dividingBy: 1) == 0 {
-                            if let int = Double(result!) {
-                                if int < Double(Int.max) {
-                                    intResult = Int(int)
-                                }
-                            }
+                            result = String(Int(Double(result!)!))
                         }
                         sessionCalculations[0].result = sessionCalculations[0].calc
-                        if intResult != 0 {
-                            sessionCalculations[0].calc = String(intResult)
-                            actualCalc = String(intResult)
-                            ans = String(intResult)
-                            calculations.append(sessionCalculations[0])
-                            self.tableView.reloadData()
-                        } else {
-                            sessionCalculations[0].calc = String(result!)
-                            ans = String(result!)
-                            actualCalc = String(result!)
-                            calculations.append(sessionCalculations[0])
-                            self.tableView.reloadData()
+                        sessionCalculations[0].calc = String(result!)
+                        actualCalc = String(result!)
+                        ans = String(result!)
+                        didDoMath = false
+                        self.tableView.reloadData()
                         }
-                        
-                    }
                  case "Del":
                     if sessionCalculations[0].calc.count == 1 {
                         if sessionCalculations[0].calc != "0" {
@@ -186,6 +166,7 @@ class CalcTableViewController: UITableViewController {
                         
                         self.tableView.reloadData()
                     } else if Double(ans)!.remainder(dividingBy: 1) == 0 {
+                        
                         sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Int(ans)!) + ")"
                         actualCalc = actualCalc + "(" + String(Int(ans)!) + ")"
                         self.tableView.reloadData()
