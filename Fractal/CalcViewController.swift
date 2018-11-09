@@ -56,6 +56,12 @@ class CalcViewController: UIViewController, CalcButtonDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func didPressHistoryButton(_ sender: Any) {
+        performSegue(withIdentifier: "histSegue", sender: Any.self)
+    }
+    @IBAction func unwindToStart(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "buttonsEmbed" {
             let dest = segue.destination as! CalcButtonsViewController
@@ -64,6 +70,10 @@ class CalcViewController: UIViewController, CalcButtonDelegate {
         } else if segue.identifier == "windowEmbed" {
             let dest = segue.destination as! CalcTableViewController
             calcTableViewController = dest
+        } else if segue.identifier == "histSegue" {
+            let nav = segue.destination as! UINavigationController
+            let dest = nav.viewControllers[0] as! CalcHistoryTableViewController
+            dest.calculations = Calculation.loadFromFile()
         }
     }
 

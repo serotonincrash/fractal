@@ -10,7 +10,7 @@ import UIKit
 import ReverseExtension
 
 class CalcTableViewController: UITableViewController {
-    var calculations: [Calculation]! = Calculation.loadFromFile() ?? []
+    var calculations: [Calculation]! = []
     var sessionCalculations = [Calculation(calc: "0", result: "　")]
     var ans: String = "0"
     var didDoMath: Bool = true
@@ -44,33 +44,40 @@ class CalcTableViewController: UITableViewController {
                 case "=":
                     var result = parseMath(calc: actualCalc)
                     if result == "" || result == "nan" {
-                        sessionCalculations[0].calc = "Error"
-                        sessionCalculations[0].result = "　"
+                        sessionCalculations[0].result = "Error"
+                        sessionCalculations[0].calc = "0"
                         ans = "0"
                         self.tableView.reloadData()
-                        sessionCalculations[0] = Calculation(calc: "0", result: "　")
-                        actualCalc = "0"
                     } else {
                         if Double(result!)!.truncatingRemainder(dividingBy: 1) == 0 {
                             if Double(result!)! > Double(Int.max) {
                                 sessionCalculations[0].calc = "Number too large"
                                 sessionCalculations[0].result = "　"
-                                ans = "0"
                                 self.tableView.reloadData()
-                                sessionCalculations[0] = Calculation(calc: "0", result: "　")
-                                actualCalc = "0"
-                        } else {
+                            } else {
                                 result = String(Int(Double(result!)!))
+                                sessionCalculations[0].result = sessionCalculations[0].calc
+                                sessionCalculations[0].calc = String(result!)
+                                actualCalc = String(result!)
+                                ans = String(result!)
+                                didDoMath = true
+                                let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
+                                calculations.append(temp)
+                                Calculation.saveToFile(calcs: calculations)
+                                self.tableView.reloadData()
                             }
+                        } else {
+                            sessionCalculations[0].result = sessionCalculations[0].calc
+                            sessionCalculations[0].calc = String(result!)
+                            actualCalc = String(result!)
+                            ans = String(result!)
+                            didDoMath = true
+                            let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
+                            calculations.append(temp)
+                            Calculation.saveToFile(calcs: calculations)
+                            self.tableView.reloadData()
                         }
-                        sessionCalculations[0].result = sessionCalculations[0].calc
-                        sessionCalculations[0].calc = String(result!)
-                        actualCalc = String(result!)
-                        ans = String(result!)
-                        didDoMath = true
-                        self.tableView.reloadData()
                     }
-                    
                     
                 case "Del":
                     if sessionCalculations[0].calc.count == 1 {
@@ -153,28 +160,24 @@ class CalcTableViewController: UITableViewController {
                                 actualCalc = String(result!)
                                 ans = String(result!)
                                 didDoMath = true
+                                let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
+                                calculations.append(temp)
+                                Calculation.saveToFile(calcs: calculations)
                                 self.tableView.reloadData()
                             }
-                            if sessionCalculations[0].calc == "Number too large" {
-                                
-                            } else {
-                                result = String(Int(Double(result!)!))
-                                sessionCalculations[0].result = sessionCalculations[0].calc
-                                sessionCalculations[0].calc = String(result!)
-                                actualCalc = String(result!)
-                                ans = String(result!)
-                                didDoMath = true
-                                self.tableView.reloadData()
-                            }
+                            
                         } else {
                             sessionCalculations[0].result = sessionCalculations[0].calc
                             sessionCalculations[0].calc = String(result!)
                             actualCalc = String(result!)
                             ans = String(result!)
                             didDoMath = true
+                            let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
+                            calculations.append(temp)
+                            Calculation.saveToFile(calcs: calculations)
                             self.tableView.reloadData()
                         }
-                        }
+                    }
                  case "Del":
                     if sessionCalculations[0].calc.count == 1 {
                         if sessionCalculations[0].calc != "0" {

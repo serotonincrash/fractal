@@ -14,11 +14,11 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="Calc View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CalcViewController" customModule="Fractal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
                                 <rect key="frame" x="0.0" y="416" width="375" height="251"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QIC-JF-eN1" secondAttribute="height" multiplier="1:1" id="kka-c8-8uS"/>
@@ -27,7 +27,7 @@
                                     <segue destination="0QL-45-mdF" kind="embed" identifier="buttonsEmbed" id="tKE-eU-E3K"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztq-Na-MAK" customClass="calcWindowContainerView" customModule="Fractal" customModuleProvider="target">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ztq-Na-MAK" customClass="calcWindowContainerView" customModule="Fractal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="40" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ztq-Na-MAK" secondAttribute="height" multiplier="1:1" id="oGW-7Q-OX1"/>
@@ -36,6 +36,15 @@
                                     <segue destination="p06-Rd-0gD" kind="embed" identifier="windowEmbed" id="Ff8-JU-lho"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xku-5g-FJQ">
+                                <rect key="frame" x="315" y="65" width="50" height="30"/>
+                                <state key="normal" title="History">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressHistoryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tZM-Dv-Th3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -46,6 +55,8 @@
                             <constraint firstItem="Ztq-Na-MAK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IFQ-vt-pUY"/>
                             <constraint firstItem="Ztq-Na-MAK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ZNU-or-amm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ztq-Na-MAK" secondAttribute="trailing" id="fmL-Cv-8AV"/>
+                            <constraint firstItem="Xku-5g-FJQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="qYk-LV-s29"/>
+                            <constraint firstAttribute="trailing" secondItem="Xku-5g-FJQ" secondAttribute="trailing" constant="10" id="wM8-ke-kw0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -54,11 +65,82 @@
                     <connections>
                         <outlet property="buttonsView" destination="QIC-JF-eN1" id="fnN-8h-iaf"/>
                         <outlet property="calcWindowContainerView" destination="Ztq-Na-MAK" id="hSv-gg-Abq"/>
+                        <segue destination="sP9-m4-WvO" kind="presentation" identifier="histSegue" id="oPP-Ih-seO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
+            <point key="canvasLocation" x="136.80000000000001" y="131.78410794602701"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="SCm-eJ-esx">
+            <objects>
+                <tableViewController id="qHE-JY-zUu" customClass="CalcHistoryTableViewController" customModule="Fractal" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xrs-Ab-9rm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="histCell" rowHeight="200" id="7RX-oA-6Ve" customClass="CalculationTableViewCell" customModule="Fractal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7RX-oA-6Ve" id="z3x-le-mJp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="x3n-BV-3Vr">
+                                            <rect key="frame" x="5" y="0.0" width="360" height="199.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calc" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FEn-lg-QLa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="71.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ans" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AEM-Gu-tyt">
+                                                    <rect key="frame" x="0.0" y="71.5" width="360" height="128"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="64"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="x3n-BV-3Vr" firstAttribute="top" secondItem="z3x-le-mJp" secondAttribute="top" id="1hE-mw-fQf"/>
+                                        <constraint firstItem="x3n-BV-3Vr" firstAttribute="leading" secondItem="z3x-le-mJp" secondAttribute="leading" constant="5" id="HDa-4b-Zpb"/>
+                                        <constraint firstAttribute="trailing" secondItem="x3n-BV-3Vr" secondAttribute="trailing" constant="10" id="LI6-n9-DVW"/>
+                                        <constraint firstAttribute="bottom" secondItem="x3n-BV-3Vr" secondAttribute="bottom" id="iWh-Xw-hgE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="calculationLabel" destination="FEn-lg-QLa" id="T5N-Wx-Rv9"/>
+                                    <outlet property="resultCell" destination="AEM-Gu-tyt" id="Iih-79-piW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qHE-JY-zUu" id="gEz-ah-cl2"/>
+                            <outlet property="delegate" destination="qHE-JY-zUu" id="PRH-iv-U3Z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="History" largeTitleDisplayMode="always" id="DvD-ef-E1j">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Lzn-dR-RGi">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Kc1-ow-7PM" kind="unwind" unwindAction="unwindToStartFor:towardsViewController:" id="K1E-Xf-Dpf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hal-DJ-JRN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Kc1-ow-7PM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="-582.45877061469275"/>
         </scene>
         <!--Calc Table View Controller-->
         <scene sceneID="DBD-a2-YSZ">
@@ -122,7 +204,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhy-Ot-SJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973.60000000000002" y="-361.33004926108379"/>
+            <point key="canvasLocation" x="1912.8" y="-362.06896551724139"/>
         </scene>
         <!--Calc Buttons View Controller-->
         <scene sceneID="cGs-bZ-4mh">
@@ -1251,6 +1333,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBz-W6-9nY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2310" y="134"/>
+        </scene>
+        <!--navView-->
+        <scene sceneID="jQo-tt-2tf">
+            <objects>
+                <navigationController title="navView" automaticallyAdjustsScrollViewInsets="NO" id="sP9-m4-WvO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="fky-CC-ces">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qHE-JY-zUu" kind="relationship" relationship="rootViewController" id="b2o-Oc-jzK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghr-Mm-uVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="-582.45877061469275"/>
         </scene>
     </scenes>
 </document>
