@@ -102,8 +102,6 @@ class CalcTableViewController: UITableViewController {
                                 sessionCalculations[0].result = "　"
                                 ans = "0"
                                 self.tableView.reloadData()
-                                sessionCalculations[0] = Calculation(calc: "0", result: "　")
-                                actualCalc = "0"
                             } else {
                                 sessionCalculations[0].calc = "(" + String(Int(ans)!) + ")"
                                 actualCalc = "(" + String(Int(ans)!) + ")"
@@ -153,15 +151,25 @@ class CalcTableViewController: UITableViewController {
                                 self.tableView.reloadData()
                             } else {
                                 result = String(Int(Double(result!)!))
+                                sessionCalculations[0].result = sessionCalculations[0].calc
+                                sessionCalculations[0].calc = String(result!)
+                                actualCalc = String(result!)
+                                ans = String(result!)
+                                didDoMath = true
+                                self.tableView.reloadData()
                             }
-                            
+                            if sessionCalculations[0].calc == "Number too large" {
+                                
+                            } else {
+                                result = String(Int(Double(result!)!))
+                                sessionCalculations[0].result = sessionCalculations[0].calc
+                                sessionCalculations[0].calc = String(result!)
+                                actualCalc = String(result!)
+                                ans = String(result!)
+                                didDoMath = true
+                                self.tableView.reloadData()
+                            }
                         }
-                        sessionCalculations[0].result = sessionCalculations[0].calc
-                        sessionCalculations[0].calc = String(result!)
-                        actualCalc = String(result!)
-                        ans = String(result!)
-                        didDoMath = true
-                        self.tableView.reloadData()
                         }
                  case "Del":
                     if sessionCalculations[0].calc.count == 1 {
@@ -192,8 +200,9 @@ class CalcTableViewController: UITableViewController {
                             sessionCalculations[0].calc = "Number too large"
                             sessionCalculations[0].result = "　"
                             ans = "0"
-                            self.tableView.reloadData()
                             actualCalc = "0"
+                            self.tableView.reloadData()
+                            
                         } else {
                             sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Int(ans)!) + ")"
                             actualCalc = actualCalc + "(" + String(Int(ans)!) + ")"
