@@ -215,14 +215,12 @@ public extension Function {
     
     public static let abs = Function(name: "abs", evaluator: { state throws -> Double in
         guard state.arguments.count == 1 else { throw MathParserError(kind: .invalidArguments, range: state.expressionRange) }
-        
         let arg1 = try state.evaluator.evaluate(state.arguments[0], substitutions: state.substitutions)
         return Swift.abs(arg1)
     })
     
     public static let percent = Function(name: "percent", evaluator: { state throws -> Double in
         guard state.arguments.count == 1 else { throw MathParserError(kind: .invalidArguments, range: state.expressionRange) }
-        
         let percentArgument = state.arguments[0]
         let percentValue = try state.evaluator.evaluate(percentArgument, substitutions: state.substitutions)
         let percent = percentValue / 100

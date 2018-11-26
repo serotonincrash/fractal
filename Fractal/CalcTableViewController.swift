@@ -11,7 +11,7 @@ import ReverseExtension
 
 class CalcTableViewController: UITableViewController {
     var calculations: [Calculation]! = []
-    var sessionCalculations = [Calculation(calc: "0", result: "　")]
+    var sessionCalculations = [Calculation(calc: "　", result: "　")]
     var ans: String = "0"
     var didDoMath: Bool = true
     var actualCalc = "0"
@@ -35,7 +35,7 @@ class CalcTableViewController: UITableViewController {
     func evalData(data: String) {
         print("didDoCalc: " + String(didDoMath))
         if true {
-            if sessionCalculations[0].calc == "0" {
+            if sessionCalculations[0].calc == "　" {
                 didDoMath = true
             }
             if didDoMath {
@@ -63,6 +63,7 @@ class CalcTableViewController: UITableViewController {
                                 didDoMath = true
                                 let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
                                 calculations.append(temp)
+                                print(calculations)
                                 Calculation.saveToFile(calcs: calculations)
                                 self.tableView.reloadData()
                             }
@@ -74,6 +75,7 @@ class CalcTableViewController: UITableViewController {
                             didDoMath = true
                             let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
                             calculations.append(temp)
+                            print(calculations)
                             Calculation.saveToFile(calcs: calculations)
                             self.tableView.reloadData()
                         }
@@ -141,7 +143,6 @@ class CalcTableViewController: UITableViewController {
                  case "=":
                     didDoMath = true
                     var result = parseMath(calc: actualCalc)
-                    print(result!)
                     if result == "" || result == "nan" {
                         sessionCalculations[0].result = "Error"
                         sessionCalculations[0].calc = "0"
@@ -161,7 +162,9 @@ class CalcTableViewController: UITableViewController {
                                 ans = String(result!)
                                 didDoMath = true
                                 let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
+                                print(temp)
                                 calculations.append(temp)
+                                print(calculations)
                                 Calculation.saveToFile(calcs: calculations)
                                 self.tableView.reloadData()
                             }
@@ -173,7 +176,9 @@ class CalcTableViewController: UITableViewController {
                             ans = String(result!)
                             didDoMath = true
                             let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
+                            print(temp)
                             calculations.append(temp)
+                            print(calculations.count)
                             Calculation.saveToFile(calcs: calculations)
                             self.tableView.reloadData()
                         }

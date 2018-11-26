@@ -158,11 +158,11 @@ class ButtonsPage1: UIViewController {
         case "9":
             currentButtonPressed = "9"
             calcButtonDelegate?.sendPressed(currentButtonPressed)
-        case "CL":
-            currentButtonPressed = "CL"
-            calcButtonDelegate?.sendPressed(currentButtonPressed)
         case "CA":
             currentButtonPressed = "CA"
+            calcButtonDelegate?.sendPressed(currentButtonPressed)
+        case "%":
+            currentButtonPressed = "%"
             calcButtonDelegate?.sendPressed(currentButtonPressed)
         case "0":
             currentButtonPressed = "0"
@@ -177,7 +177,7 @@ class ButtonsPage1: UIViewController {
             currentButtonPressed = "="
             calcButtonDelegate?.sendPressed(currentButtonPressed)
         default:
-            fatalError("Visit gethacking.com")
+            print()
         }
     }
 
@@ -213,8 +213,8 @@ class ButtonsPage2: UIViewController {
         case "a⁻¹":
             currentButtonPressed = "^-1"
             calcButtonDelegate?.sendPressed(currentButtonPressed)
-        case "CL":
-            currentButtonPressed = "CL"
+        case "mod":
+            currentButtonPressed = "mod"
             calcButtonDelegate?.sendPressed(currentButtonPressed)
         case "=":
             currentButtonPressed = "="
@@ -249,8 +249,8 @@ class ButtonsPage2: UIViewController {
         case "tan":
             currentButtonPressed = "tan("
             calcButtonDelegate?.sendPressed(currentButtonPressed)
-        case "%":
-            currentButtonPressed = "%"
+        case "CL":
+            currentButtonPressed = "CL"
             calcButtonDelegate?.sendPressed(currentButtonPressed)
         case "π":
             currentButtonPressed = "π()"

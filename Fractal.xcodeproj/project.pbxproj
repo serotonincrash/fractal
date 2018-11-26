@@ -43,7 +43,6 @@
 		CE25E4EC218F570C004352A6 /* OperatorTokenSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25E4C4218F570B004352A6 /* OperatorTokenSet.swift */; };
 		CE25E4ED218F570C004352A6 /* TokenGrouper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25E4C5218F570B004352A6 /* TokenGrouper.swift */; };
 		CE25E4EE218F570C004352A6 /* ExponentExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25E4C6218F570B004352A6 /* ExponentExtractor.swift */; };
-		CE25E4EF218F570C004352A6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE25E4C7218F570B004352A6 /* Info.plist */; };
 		CE25E4F0218F570C004352A6 /* TokenResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25E4C8218F570B004352A6 /* TokenResolver.swift */; };
 		CE25E4F1218F570C004352A6 /* DecimalNumberExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25E4C9218F570B004352A6 /* DecimalNumberExtractor.swift */; };
 		CE25E4F2218F570C004352A6 /* TokenCharacterBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25E4CA218F570B004352A6 /* TokenCharacterBuffer.swift */; };
@@ -297,7 +296,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE25E4EF218F570C004352A6 /* Info.plist in Resources */,
 				CEADBA62218B4781003AB1BC /* LaunchScreen.storyboard in Resources */,
 				CEADBA5F218B4781003AB1BC /* Assets.xcassets in Resources */,
 				CEADBA5D218B4781003AB1BC /* Main.storyboard in Resources */,

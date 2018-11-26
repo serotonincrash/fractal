@@ -154,7 +154,7 @@ public extension Operator {
             case .modulo:
                 arity = .binary
                 associativity = .left
-                tokens = ["%"]
+                tokens = ["mod"]
             
             case .bitwiseNot:
                 arity = .unary
@@ -211,13 +211,11 @@ public extension Operator {
                 arity = .unary
                 associativity = .left
                 tokens = [")"]
-                
             case .comma:
                 arity = .binary
                 associativity = .left
                 tokens = [","]
         }
-        
         self.init(function: builtInOperator.rawValue, arity: arity, associativity: associativity)
         self.tokens = tokens
         self.precedence = nil

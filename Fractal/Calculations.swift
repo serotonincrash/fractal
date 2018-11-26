@@ -46,13 +46,21 @@ extension Double
         return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
     }
 }
+// MARK: Parsing function
 func parseMath(calc: String) -> String? {
     var result: Double = 0
     do {
         result = try evaluator.evaluate(Expression(string: calc))
     } catch {
+        let error = error as! MathParserError
+        print(error.range)
         return ""
     }
-    return String(result)
+    print(result.truncatingRemainder(dividingBy: 1))
+    if (result.truncatingRemainder(dividingBy: 1) < 0.00000000001 || result.truncatingRemainder(dividingBy: 1) > 0.9999999999) && result < Double(Int.max){
+        return (String(Int(round(result))))
+    } else {
+        return String(result.truncate(places: 40))
+    }
 }
 
