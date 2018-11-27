@@ -14,11 +14,11 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="Calc View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CalcViewController" customModule="Fractal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
                                 <rect key="frame" x="0.0" y="292" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QIC-JF-eN1" secondAttribute="height" multiplier="1:1" id="kka-c8-8uS"/>
@@ -28,7 +28,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztq-Na-MAK" customClass="calcWindowContainerView" customModule="Fractal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="40" width="375" height="251"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ztq-Na-MAK" secondAttribute="height" multiplier="1:1" id="oGW-7Q-OX1"/>
                                 </constraints>
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QIC-JF-eN1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7uP-pg-meI"/>
                             <constraint firstItem="QIC-JF-eN1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Rj-qw-olU"/>
@@ -147,7 +147,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="CalcWindowViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p06-Rd-0gD" customClass="CalcTableViewController" customModule="Fractal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="zSd-b5-eCt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="251"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1143,8 +1143,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ2-Va-4zU" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
-                                        <state key="normal" title="CL">
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
+                                        <state key="normal" title="Settings">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>

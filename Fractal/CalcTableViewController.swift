@@ -45,7 +45,7 @@ class CalcTableViewController: UITableViewController {
                     var result = parseMath(calc: actualCalc)
                     if result == "" || result == "nan" {
                         sessionCalculations[0].result = "Error"
-                        sessionCalculations[0].calc = "0"
+                        sessionCalculations[0].calc = "　"
                         ans = "0"
                         self.tableView.reloadData()
                     } else {
@@ -94,16 +94,15 @@ class CalcTableViewController: UITableViewController {
                         self.tableView.reloadData()
                     }
                 case "CA":
-                    sessionCalculations[0] = Calculation(calc: "0", result: "　")
+                    sessionCalculations[0] = Calculation(calc: "　", result: "　")
                     actualCalc = "0"
                     self.tableView.reloadData()
                 case "CL":
-                    sessionCalculations[0].calc = "0"
+                    sessionCalculations[0].calc = "　"
                     actualCalc = "0"
                     self.tableView.reloadData()
                 case "Ans":
                     if ans == "0.0" || ans == "0" {
-                        
                     } else if Double(ans)?.truncatingRemainder(dividingBy: 1) == 0 {
                             if Double(ans)! > Double(Int.max) {
                                 sessionCalculations[0].calc = "Number too large"
@@ -111,12 +110,12 @@ class CalcTableViewController: UITableViewController {
                                 ans = "0"
                                 self.tableView.reloadData()
                             } else {
-                                sessionCalculations[0].calc = "(" + String(Int(ans)!) + ")"
+                                sessionCalculations[0].calc = "(Ans)"
                                 actualCalc = "(" + String(Int(ans)!) + ")"
                                 self.tableView.reloadData()
                             }
                     } else {
-                        sessionCalculations[0].calc = "(" + String(Double(ans)!) + ")"
+                        sessionCalculations[0].calc = "(Ans)"
                         actualCalc = "(" + String(Double(ans)!) + ")"
                         self.tableView.reloadData()
                     }
@@ -145,7 +144,7 @@ class CalcTableViewController: UITableViewController {
                     var result = parseMath(calc: actualCalc)
                     if result == "" || result == "nan" {
                         sessionCalculations[0].result = "Error"
-                        sessionCalculations[0].calc = "0"
+                        sessionCalculations[0].calc = "　"
                         ans = "0"
                         self.tableView.reloadData()
                     } else {
@@ -185,8 +184,8 @@ class CalcTableViewController: UITableViewController {
                     }
                  case "Del":
                     if sessionCalculations[0].calc.count == 1 {
-                        if sessionCalculations[0].calc != "0" {
-                            sessionCalculations[0] = Calculation(calc: "0", result: "　")
+                        if sessionCalculations[0].calc != "　" {
+                            sessionCalculations[0] = Calculation(calc: "　", result: "　")
                             actualCalc = "0"
                             self.tableView.reloadData()
                         }
@@ -196,11 +195,11 @@ class CalcTableViewController: UITableViewController {
                         self.tableView.reloadData()
                     }
                  case "CA":
-                    sessionCalculations[0] = Calculation(calc: "0", result: "　")
+                    sessionCalculations[0] = Calculation(calc: "　", result: "　")
                     actualCalc = "0"
                     self.tableView.reloadData()
                  case "CL":
-                    sessionCalculations[0].calc = "0"
+                    sessionCalculations[0].calc = "　"
                     actualCalc = "0"
                     self.tableView.reloadData()
                  case "Ans":
@@ -216,12 +215,12 @@ class CalcTableViewController: UITableViewController {
                             self.tableView.reloadData()
                             
                         } else {
-                            sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Int(ans)!) + ")"
+                            sessionCalculations[0].calc = sessionCalculations[0].calc + "(Ans)"
                             actualCalc = actualCalc + "(" + String(Int(ans)!) + ")"
                             self.tableView.reloadData()
                         }
                     } else {
-                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(" + String(Double(ans)!) + ")"
+                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(Ans)"
                         actualCalc = actualCalc + "(" + String(Double(ans)!) + ")"
                         self.tableView.reloadData()
                     }
