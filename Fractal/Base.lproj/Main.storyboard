@@ -223,9 +223,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Copied" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VKm-Mm-o69">
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copied" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VKm-Mm-o69">
                                             <rect key="frame" x="5" y="0.0" width="365" height="199.66666666666666"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="72"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -236,7 +235,11 @@
                                         <constraint firstItem="x3n-BV-3Vr" firstAttribute="top" secondItem="z3x-le-mJp" secondAttribute="top" id="1hE-mw-fQf"/>
                                         <constraint firstItem="x3n-BV-3Vr" firstAttribute="leading" secondItem="z3x-le-mJp" secondAttribute="leading" constant="10" id="HDa-4b-Zpb"/>
                                         <constraint firstAttribute="trailing" secondItem="x3n-BV-3Vr" secondAttribute="trailing" constant="10" id="LI6-n9-DVW"/>
+                                        <constraint firstAttribute="trailing" secondItem="VKm-Mm-o69" secondAttribute="trailing" constant="5" id="TkY-ZY-J6a"/>
+                                        <constraint firstItem="VKm-Mm-o69" firstAttribute="leading" secondItem="z3x-le-mJp" secondAttribute="leading" constant="5" id="gHW-f5-uMc"/>
+                                        <constraint firstAttribute="bottom" secondItem="VKm-Mm-o69" secondAttribute="bottom" id="i8O-Z0-c4S"/>
                                         <constraint firstAttribute="bottom" secondItem="x3n-BV-3Vr" secondAttribute="bottom" id="iWh-Xw-hgE"/>
+                                        <constraint firstItem="VKm-Mm-o69" firstAttribute="top" secondItem="z3x-le-mJp" secondAttribute="top" id="sea-ow-GRp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -256,7 +259,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" id="Lzn-dR-RGi">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="Kc1-ow-7PM" kind="unwind" unwindAction="unwindToStartFor:towardsViewController:" id="K1E-Xf-Dpf"/>
+                                <segue destination="Kc1-ow-7PM" kind="unwind" identifier="unwindSegue" unwindAction="unwindToStartFor:towardsViewController:" id="K1E-Xf-Dpf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

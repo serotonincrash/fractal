@@ -10,6 +10,7 @@ import UIKit
 
 protocol CalcButtonDelegate: AnyObject {
     func sendPressed(_ key: String)
+    func sendCalcs(_ calcs: [Calculation])
 }
 
 class CalcViewController: UIViewController, CalcButtonDelegate {
@@ -29,7 +30,9 @@ class CalcViewController: UIViewController, CalcButtonDelegate {
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+    func sendCalcs(_ calcs: [Calculation]) {
+        calcTableViewController.updateCalcs(data: calcs)
+    }
     func sendPressed(_ key: String) {
         currentButtonPressed = key
         if currentButtonPressed == "Settings" {

@@ -10,6 +10,7 @@ import UIKit
 
 class CalcHistoryTableViewController: UITableViewController {
     var calculations: [Calculation]! = []
+    var CalcViewDelegate: CalcButtonDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -102,14 +103,15 @@ class CalcHistoryTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "unwindSegue" {
+            let dest = segue.destination as! CalcViewController
+            dest.sendCalcs(calculations)
+        }
     }
-    */
+
 
 }
