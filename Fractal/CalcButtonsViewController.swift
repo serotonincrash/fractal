@@ -78,7 +78,6 @@ class CalcButtonsViewController: UIPageViewController, UIPageViewControllerDataS
         return [self.newPage(number: "1"),
                 self.newPage(number: "2")]
     }()
-    
     private func newPage(number: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil) .
             instantiateViewController(withIdentifier: "page\(number)")
@@ -96,13 +95,20 @@ class CalcButtonsViewController: UIPageViewController, UIPageViewControllerDataS
 }
 
 class ButtonsPage1: UIViewController {
-    var didPressButton = false
     var currentButtonPressed = ""
-    let impact = UIImpactFeedbackGenerator()
     var calcButtonDelegate: CalcButtonDelegate?
+    let impact = UIImpactFeedbackGenerator()
+    
+    
     @IBAction func buttonPressed(_ sender: CustomButton) {
+        sender.blinkstart()
         impact.impactOccurred()
-        sender.blink()
+    }
+    @IBAction func buttonDragged(_ sender: CustomButton) {
+        sender.blinkend()
+    }
+    @IBAction func buttonReleased(_ sender: CustomButton) {
+        sender.blinkend()
         switch (sender.titleLabel?.text!)! {
         case "√a":
             currentButtonPressed = "√"
@@ -193,10 +199,17 @@ class ButtonsPage1: UIViewController {
 }
 class ButtonsPage2: UIViewController {
     var currentButtonPressed = ""
+    var calcButtonDelegate: CalcButtonDelegate?
     let impact = UIImpactFeedbackGenerator()
     @IBAction func buttonPressed(_ sender: CustomButton) {
+        sender.blinkstart()
         impact.impactOccurred()
-        sender.blink()
+    }
+    @IBAction func buttonDragged(_ sender: CustomButton) {
+        sender.blinkend()
+    }
+    @IBAction func buttonReleased(_ sender: CustomButton) {
+        sender.blinkend()
         switch (sender.titleLabel?.text)! {
         case "n!":
             currentButtonPressed = "!"
@@ -280,8 +293,6 @@ class ButtonsPage2: UIViewController {
             print("default")
         }
     }
-    var calcButtonDelegate: CalcButtonDelegate?
-    
     override func viewDidLoad() {
         
     }

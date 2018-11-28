@@ -14,12 +14,12 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="Calc View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CalcViewController" customModule="Fractal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
-                                <rect key="frame" x="0.0" y="292" width="375" height="375"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
+                                <rect key="frame" x="0.0" y="416" width="375" height="251"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QIC-JF-eN1" secondAttribute="height" multiplier="1:1" id="kka-c8-8uS"/>
                                 </constraints>
@@ -163,16 +163,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="37W-uO-zbd">
-                                            <rect key="frame" x="5" y="0.0" width="360" height="199.5"/>
+                                            <rect key="frame" x="5" y="0.0" width="585" height="199.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calc" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="PL0-jv-vLg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="71.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="585" height="71.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ans" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="mfW-39-AXT">
-                                                    <rect key="frame" x="0.0" y="71.5" width="360" height="128"/>
+                                                    <rect key="frame" x="0.0" y="71.5" width="585" height="128"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="64"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -244,7 +244,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="cMz-m2-TUH"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="UEf-6c-guF"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="haj-x7-FFx"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="cMz-m2-TUH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9t-wT-ff4" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -263,7 +265,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="fxV-je-mf5"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="CxW-Gv-k7U"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="Hiu-DK-O6Y"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="fxV-je-mf5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ml-Lx-0wF" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -282,7 +286,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="Q9f-qZ-hda"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="KNf-6b-tXU"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="1Pu-XJ-sOe"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="Q9f-qZ-hda"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vZ-Fm-sUW" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -301,7 +307,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="DdX-JR-ftg"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="Jh3-4X-sNP"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="9lF-gb-gBp"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="DdX-JR-ftg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyL-1D-dQf" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -320,7 +328,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="phd-Rv-ye0"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="gve-WS-MSH"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="8IE-2J-Jwj"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="phd-Rv-ye0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -348,7 +358,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="ERg-6u-ev6"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="lji-Qp-IgD"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="teB-RK-7U3"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="ERg-6u-ev6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLd-FL-7At" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -367,7 +379,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="zEO-Sd-kFb"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="Ulz-eM-Xe2"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="Crk-rU-LvI"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="zEO-Sd-kFb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BI-eO-sz1" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -386,7 +400,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="nmu-rL-Xgv"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="vce-xG-Uj3"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="lZp-vp-IFp"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="nmu-rL-Xgv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh8-vT-fQa" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -405,7 +421,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="5RA-gc-LCd"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="srn-Yn-KwV"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="mne-cu-GaV"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="5RA-gc-LCd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EF4-KY-gwg" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -424,7 +442,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="qqe-Qs-Ac1"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="kNK-0O-mIb"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="lfC-O1-lP8"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="qqe-Qs-Ac1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -449,7 +469,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="UEv-JH-6Ef"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="613-KA-1J5"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="gn4-NP-nJJ"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="UEv-JH-6Ef"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-yG-wYn" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -468,7 +490,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="S6L-jG-4oi"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="Cqj-LG-cJc"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="eeD-fj-3Kb"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="S6L-jG-4oi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h77-tG-TJW" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -487,7 +511,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="mgl-nW-fLf"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="GMb-Xh-glp"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="5Js-SC-sFa"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="mgl-nW-fLf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPX-vL-BpL" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -506,7 +532,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="OgE-ar-JDl"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="QbW-dL-mGk"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="UeR-zX-b1p"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="OgE-ar-JDl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO6-Z6-Xuu" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -525,7 +553,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="3hf-GN-tiA"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="htt-wZ-9Uw"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="sVe-d8-mWJ"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="3hf-GN-tiA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -550,7 +580,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="DsJ-Uc-SH2"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="pKy-fP-HcQ"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="Xzs-qY-DpD"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="DsJ-Uc-SH2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fuv-ZK-IxC" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -569,7 +601,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="FwX-F6-8XZ"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="JFm-5a-gZY"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="6vb-Gd-R6i"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="FwX-F6-8XZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-76-oOJ" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -588,7 +622,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="LaR-CI-c2C"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="IVe-gA-Man"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="7pa-um-5x6"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="LaR-CI-c2C"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05p-Ng-cL1" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -607,7 +643,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="8ha-dh-mZ0"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="bsQ-d8-cUy"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="eq0-H6-Lh7"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="8ha-dh-mZ0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qL4-HQ-9re" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -626,7 +664,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="Hwu-aU-P6t"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="0qH-Il-ZQ7"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="pby-Qh-Gib"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="Hwu-aU-P6t"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -654,7 +694,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="GyI-pA-DJm"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="vqt-7U-eAy"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="Pif-5e-txn"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="GyI-pA-DJm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZh-SX-Qbv" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -676,7 +718,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="TbS-Tk-sJe"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="p5S-eW-9Q6"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="Y9a-WH-JUV"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="TbS-Tk-sJe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaZ-SV-MeC" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -698,7 +742,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="lHR-Ht-LzU"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="0lg-YX-E61"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="86K-dQ-ilM"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="lHR-Ht-LzU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfe-Fk-cBE" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -720,7 +766,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="RZW-Z9-3QY"/>
+                                            <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="2e6-eo-RPe"/>
+                                            <action selector="buttonPressed:" destination="1iZ-7d-zxA" eventType="touchDown" id="k3d-29-xeG"/>
+                                            <action selector="buttonReleased:" destination="1iZ-7d-zxA" eventType="touchUpInside" id="RZW-Z9-3QY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -793,7 +841,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="7fl-lu-4M6"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="cJv-84-j3F"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="xgW-gT-Nh1"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="7fl-lu-4M6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEc-wH-0g7" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -812,7 +862,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="KZ0-D3-HaN"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="SKZ-eU-Yem"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="dsr-4j-rTM"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="KZ0-D3-HaN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrd-FN-NmG" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -831,7 +883,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="jBo-By-tWe"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="G3p-12-VKz"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="fcL-Zl-ruW"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="jBo-By-tWe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wu-mM-tBF" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -850,7 +904,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="XoY-Bt-fmb"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="Lre-CN-fZV"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="kni-iC-sNE"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="XoY-Bt-fmb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AX4-om-ygQ" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -869,7 +925,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="Kdz-If-BGE"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="UV1-AP-8P6"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="bxH-xm-fUn"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="Kdz-If-BGE"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -897,7 +955,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="qQN-os-b52"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="4nV-rR-pnf"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="6Cn-wZ-DwO"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="qQN-os-b52"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVA-Zn-6kU" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -916,7 +976,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="nCV-PR-bAX"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="fEL-r1-6IE"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="GVI-Gh-v5f"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="nCV-PR-bAX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8V-NX-7Aq" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -935,7 +997,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="i5V-m6-Wio"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="qYt-R7-4ub"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="F4d-0p-j09"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="i5V-m6-Wio"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yh-is-xmr" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -954,7 +1018,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="KbT-4O-LNF"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="3AV-Pk-FlF"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="rhE-xb-f1x"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="KbT-4O-LNF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vO7-7n-QUP" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -973,7 +1039,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="GTV-ov-Imu"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="iMY-f4-vXj"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="iwV-Rh-Ni3"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="GTV-ov-Imu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -998,7 +1066,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="pyP-q0-tqe"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="2Em-K4-xa9"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="vH4-Ph-Dn5"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="pyP-q0-tqe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nq-vs-8M0" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1017,7 +1087,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="G6A-6T-jjC"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="7ja-EP-c26"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="fjk-vv-ffP"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="G6A-6T-jjC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9j-AO-h0I" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1036,7 +1108,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="77e-DV-TrX"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="7YW-c1-hmk"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="bdu-dg-hlR"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="77e-DV-TrX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNm-XP-Zxz" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1055,7 +1129,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="yrV-dJ-nl3"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="WUH-N6-cEi"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="wWV-mh-lZG"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="yrV-dJ-nl3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMg-F4-mBZ" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1074,7 +1150,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="xTv-SK-uTy"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="nr3-1g-1Pg"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="BPZ-PX-Lu6"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="xTv-SK-uTy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1099,7 +1177,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="R6A-9q-Ub2"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="qe9-9N-0bX"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="iVX-9w-6wR"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="R6A-9q-Ub2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k68-3O-n3Z" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1118,7 +1198,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="Z8F-J4-0bJ"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="OJL-Mp-BzN"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="coU-RR-xh0"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="Z8F-J4-0bJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZD-Jh-OeJ" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1137,7 +1219,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="g2a-Wv-t6Q"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="DVG-an-A5Z"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="1yc-CU-Ogk"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="g2a-Wv-t6Q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ2-Va-4zU" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1156,7 +1240,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="RhB-2x-AsZ"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="f2k-Al-tS0"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="DFc-Nz-wsp"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="RhB-2x-AsZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPW-EQ-CYL" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1175,7 +1261,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="BRk-GK-Nax"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="via-eD-TI1"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="648-1u-bLB"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="BRk-GK-Nax"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1201,7 +1289,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="HDd-vB-3Br"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="fxL-ib-vwV"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="0qw-JB-bLJ"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="HDd-vB-3Br"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anQ-da-cp7" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1223,7 +1313,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="yu3-ZG-NqE"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="dQl-y3-XJw"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="mpf-af-QWr"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="yu3-ZG-NqE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="br4-oH-Jnz" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1245,7 +1337,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="wbk-9P-ZjW"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="bru-tl-fsB"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="LvK-ad-ouA"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="wbk-9P-ZjW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-f6-iN0" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1267,7 +1361,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="fVE-Qm-eFq"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="MR3-Ee-hJW"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="WJ2-UN-UiU"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="fVE-Qm-eFq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixl-KT-60N" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
@@ -1286,7 +1382,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchUpInside" id="c9D-lS-yBZ"/>
+                                            <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="xPJ-Z0-QO1"/>
+                                            <action selector="buttonPressed:" destination="ViN-nG-6m5" eventType="touchDown" id="sMQ-eO-qW8"/>
+                                            <action selector="buttonReleased:" destination="ViN-nG-6m5" eventType="touchUpInside" id="c9D-lS-yBZ"/>
                                         </connections>
                                     </button>
                                 </subviews>

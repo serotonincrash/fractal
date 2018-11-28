@@ -11,6 +11,10 @@ var calc = ""
 var evaluator = Evaluator()
 let power = Operator(builtInOperator: .power)
 let operatorset = OperatorSet()
+func roundToPlaces(value:Double, places:Int) -> Double {
+    let divisor = pow(10.0, Double(places))
+    return round(value * divisor) / divisor
+}
 class Calculation: Encodable, Decodable {
     var calc: String
     var result: String
@@ -60,7 +64,7 @@ func parseMath(calc: String) -> String? {
     if (result.truncatingRemainder(dividingBy: 1) < 0.00000000001 || result.truncatingRemainder(dividingBy: 1) > 0.9999999999) && result < Double(Int.max){
         return (String(Int(round(result))))
     } else {
-        return String(result.truncate(places: 40))
+        return String(roundToPlaces(value: result, places: 16))
     }
 }
 

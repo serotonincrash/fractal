@@ -35,8 +35,10 @@ import UIKit
 }
 
 extension UIView {
-    func blink() {
-        self.alpha = 0.2
+    func blinkstart() {
+        UIView.animate(withDuration: 0.03, delay: 0.0, options: [.curveLinear], animations: {self.alpha = 0.2}, completion: nil)
+    }
+    func blinkend() {
         UIView.animate(withDuration: 0.05, delay: 0.0, options: [.curveLinear], animations: {self.alpha = 1.0}, completion: nil)
     }
 }
