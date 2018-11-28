@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4238D431C2C2E365F4EA4F10 /* Pods_Fractal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2851C137997A3F287A7A9581 /* Pods_Fractal.framework */; };
+		CE17E4C421AE78A000842EB4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17E4C321AE78A000842EB4 /* SettingsTableViewController.swift */; };
 		CE25E4CC218F570C004352A6 /* MathParserErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25E4A3218F570B004352A6 /* MathParserErrors.swift */; };
 		CE25E4CD218F570C004352A6 /* LocalizedNumberExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25E4A4218F570B004352A6 /* LocalizedNumberExtractor.swift */; };
 		CE25E4CE218F570C004352A6 /* VariableExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25E4A5218F570B004352A6 /* VariableExtractor.swift */; };
@@ -64,6 +65,7 @@
 		0B44B5D977D02674577A487A /* Pods-Fractal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fractal.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fractal/Pods-Fractal.release.xcconfig"; sourceTree = "<group>"; };
 		2851C137997A3F287A7A9581 /* Pods_Fractal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fractal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4988ABE95E825FD316173D /* Pods-Fractal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fractal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fractal/Pods-Fractal.debug.xcconfig"; sourceTree = "<group>"; };
+		CE17E4C321AE78A000842EB4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		CE25E4A3218F570B004352A6 /* MathParserErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathParserErrors.swift; sourceTree = "<group>"; };
 		CE25E4A4218F570B004352A6 /* LocalizedNumberExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedNumberExtractor.swift; sourceTree = "<group>"; };
 		CE25E4A5218F570B004352A6 /* VariableExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableExtractor.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				CE7A35982195EC2A00852F6F /* CalcHistoryTableViewController.swift */,
 				CEBC64BC218EB45B001A51A3 /* CustomClasses.swift */,
 				CE6150B8218DE82800B6923F /* CalcButtonsViewController.swift */,
+				CE17E4C321AE78A000842EB4 /* SettingsTableViewController.swift */,
 				CEADBA69218B4AC5003AB1BC /* Calculations.swift */,
 				CEADBA5E218B4781003AB1BC /* Assets.xcassets */,
 				CEADBA60218B4781003AB1BC /* LaunchScreen.storyboard */,
@@ -393,6 +396,7 @@
 				CE25E4ED218F570C004352A6 /* TokenGrouper.swift in Sources */,
 				CE25E4D9218F570C004352A6 /* Operator.swift in Sources */,
 				CE985F2E2191EC92000F070B /* CalculationTableViewCell.swift in Sources */,
+				CE17E4C421AE78A000842EB4 /* SettingsTableViewController.swift in Sources */,
 				CE25E4E7218F570C004352A6 /* FractionNumberExtractor.swift in Sources */,
 				CE25E4F2218F570C004352A6 /* TokenCharacterBuffer.swift in Sources */,
 				CE7A35992195EC2A00852F6F /* CalcHistoryTableViewController.swift in Sources */,

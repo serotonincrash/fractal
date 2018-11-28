@@ -21,37 +21,25 @@ class CalcViewController: UIViewController, CalcButtonDelegate {
     var calcTableViewController: CalcTableViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let angleMeasurementMode = UserDefaults.standard.string(forKey: "angleMeasurementMode") ?? "degrees"
+        if angleMeasurementMode == "degrees" {
+            evaluator.angleMeasurementMode = .degrees
+        } else {
+            evaluator.angleMeasurementMode = .radians
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     func sendPressed(_ key: String) {
         currentButtonPressed = key
-        calcTableViewController.evalData(data: currentButtonPressed)
+        if currentButtonPressed == "Settings" {
+            performSegue(withIdentifier: "settingsSegue", sender: Any.self)
+        } else {
+            calcTableViewController.evalData(data: currentButtonPressed)
+        }
+
     }
     
-//    private lazy var CalcButtonsViewController: CalcButtonsViewController = {
-//        // Load Storyboard
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//
-//        // Instantiate View Controller
-//        var viewController = storyboard.instantiateViewController(withIdentifier: "ButtonsViewController") as! CalcButtonsViewController
-//        viewController.calcButtonDelegate = self
-//        // Add View Controller as Child View Controller
-//
-//        return viewController
-//    }()
-//    private lazy var CalcTableViewController: CalcTableViewController = {
-//        // Load Storyboard
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//
-//        // Instantiate View Controller
-//        var viewController = storyboard.instantiateViewController(withIdentifier: "CalcWindowViewController") as! CalcTableViewController
-//
-//        // Add View Controller as Child View Controller
-//
-//
-//        return viewController
-//    }()
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

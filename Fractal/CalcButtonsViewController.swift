@@ -97,7 +97,6 @@ class ButtonsPage1: UIViewController {
     var calcButtonDelegate: CalcButtonDelegate?
     let impact = UIImpactFeedbackGenerator()
     
-    
     @IBAction func buttonPressed(_ sender: CustomButton) {
         sender.blinkstart()
         impact.impactOccurred()

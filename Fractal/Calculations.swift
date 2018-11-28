@@ -9,6 +9,7 @@
 import Foundation
 var calc = ""
 var evaluator = Evaluator()
+var angleMode: Evaluator.AngleMode = .degrees
 let power = Operator(builtInOperator: .power)
 let operatorset = OperatorSet()
 func roundToPlaces(value:Double, places:Int) -> Double {
