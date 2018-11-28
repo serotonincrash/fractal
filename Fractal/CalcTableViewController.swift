@@ -32,6 +32,8 @@ class CalcTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // MARK: Actually adding the data to the UILabels
+    
     func evalData(data: String) {
         print("didDoCalc: " + String(didDoMath))
         if true {

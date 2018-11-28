@@ -17,7 +17,7 @@ public final class OperatorSet {
         case greaterThan
     }
     
-    public init(interpretsPercentSignAsModulo: Bool = true) {
+    public init(interpretsPercentSignAsModulo: Bool = false) {
         var ops = Array<Operator>()
         var precedence = 1
         
@@ -62,6 +62,7 @@ public final class OperatorSet {
         precedence += 1
         
         // NOTE: percent-as-modulo precedence goes here (after ImplicitMultiply)
+        ops.append(Operator(builtInOperator: .modulo, precedence: precedence))
         
         // BitwiseShiftPrecedence
         ops.append(Operator(builtInOperator: .leftShift, precedence: precedence))
@@ -81,6 +82,8 @@ public final class OperatorSet {
         ops.append(Operator(builtInOperator: .doubleFactorial, precedence: precedence))
         ops.append(Operator(builtInOperator: .factorial, precedence: precedence))
         // NOTE: percent-as-percent precedence goes here (same as Factorial)
+        
+        ops.append(Operator(builtInOperator: .percent, precedence: precedence))
         ops.append(Operator(builtInOperator: .degree, precedence: precedence))
         precedence += 1
         
@@ -115,16 +118,12 @@ public final class OperatorSet {
         }
     }
     private func interpretPercentSignAsModulo(_ interpretAsModulo: Bool) {
-        let percent = Operator(builtInOperator: .percent)
-        let modulo = Operator(builtInOperator: .modulo)
-        
-        // remove the old one and add the new one
+        // This isn't strictly needed because I want both signs
+        // - derpydm
         if interpretAsModulo {
-            removeOperator(percent)
-            addOperator(modulo, relatedBy: .greaterThan, toOperator: Operator(builtInOperator: .implicitMultiply))
+
         } else {
-            removeOperator(modulo)
-            addOperator(percent, relatedBy: .equalTo, toOperator: Operator(builtInOperator: .factorial))
+
         }
     }
     

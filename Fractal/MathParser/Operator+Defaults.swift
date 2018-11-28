@@ -178,7 +178,6 @@ public extension Operator {
                 arity = .unary
                 associativity = .left
                 tokens = ["%"]
-            
             case .power:
                 arity = .binary
                 associativity = Operator.defaultPowerAssociativity

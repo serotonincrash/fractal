@@ -44,4 +44,13 @@ internal extension Double {
         return tgamma(self+1)
     }
     
+    // Fractal: Handling Doubles
+    
+    func truncate(places : Int) -> Double {
+        return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
+    }
+    
+    func round(places: Int) -> Double {
+        return Double(pow(10.0, Double(places)) * self)/pow(10.0, Double(places))
+    }
 }
