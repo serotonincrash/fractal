@@ -9,9 +9,7 @@
 import UIKit
 
 class CalcButtonsViewController: UIPageViewController, UIPageViewControllerDataSource {
-    
     var calcButtonDelegate: CalcButtonDelegate?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
@@ -197,6 +195,7 @@ class ButtonsPage1: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 }
+
 class ButtonsPage2: UIViewController {
     var currentButtonPressed = ""
     var calcButtonDelegate: CalcButtonDelegate?
