@@ -25,6 +25,9 @@ class CalcHistoryTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -33,14 +36,29 @@ class CalcHistoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! CalculationTableViewCell
-        UIPasteboard.general.string = cell.calculationLabel.text! + " = " + cell.resultCell.text!
+        let animator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: {
+            let transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            cell.resultLabel.transform = transform
+            cell.calculationLabel.transform = transform
+            cell.copiedLabel.alpha = 1.0
+        })
+        animator.addCompletion { (_) in
+            let animation = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: {
+                cell.resultLabel.transform = CGAffineTransform.identity
+                cell.calculationLabel.transform = CGAffineTransform.identity
+                cell.copiedLabel.alpha = 0
+            })
+            animation.startAnimation()
+        }
+        animator.startAnimation()
+        UIPasteboard.general.string = cell.calculationLabel.text! + " = " + cell.resultLabel.text!
     }
 
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "histCell", for: indexPath) as! CalculationTableViewCell
             cell.calculationLabel.text = self.calculations[indexPath.row].result
-            cell.resultCell.text = self.calculations[indexPath.row].calc
+            cell.resultLabel.text = self.calculations[indexPath.row].calc
         // Configure the cell...
         return cell
     }

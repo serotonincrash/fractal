@@ -10,7 +10,8 @@ import UIKit
 
 class CalculationTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var resultCell: UILabel!
+    @IBOutlet weak var copiedLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var calculationLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

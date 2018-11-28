@@ -264,7 +264,7 @@ class CalcTableViewController: UITableViewController {
         tableView.re.delegate = self
         
         let calcCell = cell.calculationLabel
-        let resultCell = cell.resultCell
+        let resultCell = cell.resultLabel
             calcCell?.text = sessionCalculations[indexPath.row].result
             resultCell?.text = sessionCalculations[indexPath.row].calc
         
