@@ -11,12 +11,16 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var angleSegmentControl: UISegmentedControl!
+    @IBOutlet weak var decimalPlacesLabel: UILabel!
     let angleMeasurementMode = UserDefaults.standard.string(forKey: "angleMeasurementMode") ?? "degrees"
+    @IBOutlet weak var decimalPlaceStepper: UIStepper!
     override func viewDidLoad() {
         super.viewDidLoad()
         if angleMeasurementMode == "radians" {
             angleSegmentControl.selectedSegmentIndex = 1
         }
+        decimalPlacesLabel.text = String(decimalPlaces)
+        decimalPlaceStepper.value = Double(decimalPlaces)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,6 +28,10 @@ class SettingsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @IBAction func decimalPlacesChanged(_ sender: UIStepper) {
+        decimalPlaces = Int(sender.value)
+        decimalPlacesLabel.text = String(decimalPlaces)
+    }
     // MARK: - Table view data source
 
     @IBAction func angleMeasurementChanged(_ sender: UISegmentedControl) {
@@ -42,7 +50,7 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 2
     }
 
     /*

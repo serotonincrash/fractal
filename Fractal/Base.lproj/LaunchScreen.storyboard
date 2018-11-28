@@ -25,9 +25,9 @@
                                     <constraint firstAttribute="width" constant="256" id="vsa-J0-y7X"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRACTAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAU-lO-yxt">
-                                <rect key="frame" x="93" y="393.5" width="189" height="57"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRACTAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="36" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAU-lO-yxt">
+                                <rect key="frame" x="77.5" y="393.5" width="220" height="66.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="56"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -38,6 +38,7 @@
                             <constraint firstItem="QAU-lO-yxt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6ed-nV-fac"/>
                             <constraint firstItem="QAU-lO-yxt" firstAttribute="top" secondItem="ITl-Qy-P5D" secondAttribute="bottom" constant="17.5" id="AXB-UV-aal"/>
                             <constraint firstItem="ITl-Qy-P5D" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XkQ-Mk-8WN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QAU-lO-yxt" secondAttribute="bottom" constant="207" id="aa2-nD-eap"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

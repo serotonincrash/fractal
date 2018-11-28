@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4238D431C2C2E365F4EA4F10 /* Pods_Fractal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2851C137997A3F287A7A9581 /* Pods_Fractal.framework */; };
 		CE17E4C421AE78A000842EB4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17E4C321AE78A000842EB4 /* SettingsTableViewController.swift */; };
-		CE17E4C621AEBB9C00842EB4 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17E4C521AEBB9C00842EB4 /* DoubleExtension.swift */; };
 		CE17E4C821AEBC0200842EB4 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17E4C721AEBC0200842EB4 /* Calculation.swift */; };
 		CE17E4CA21AEBE1D00842EB4 /* ButtonsPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17E4C921AEBE1D00842EB4 /* ButtonsPage1.swift */; };
 		CE17E4CC21AEBE2A00842EB4 /* ButtonsPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17E4CB21AEBE2A00842EB4 /* ButtonsPage2.swift */; };
@@ -70,7 +69,6 @@
 		2851C137997A3F287A7A9581 /* Pods_Fractal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fractal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E4988ABE95E825FD316173D /* Pods-Fractal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fractal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fractal/Pods-Fractal.debug.xcconfig"; sourceTree = "<group>"; };
 		CE17E4C321AE78A000842EB4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		CE17E4C521AEBB9C00842EB4 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		CE17E4C721AEBC0200842EB4 /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 		CE17E4C921AEBE1D00842EB4 /* ButtonsPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsPage1.swift; sourceTree = "<group>"; };
 		CE17E4CB21AEBE2A00842EB4 /* ButtonsPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsPage2.swift; sourceTree = "<group>"; };
@@ -226,13 +224,13 @@
 		CEADBA56218B4781003AB1BC /* Fractal */ = {
 			isa = PBXGroup;
 			children = (
+				CE17E4CD21AEBF5A00842EB4 /* Extensions */,
 				CE25E4A2218F570B004352A6 /* MathParser */,
 				CEADBA57218B4781003AB1BC /* AppDelegate.swift */,
 				CEADBA59218B4781003AB1BC /* CalcViewController.swift */,
 				CE985F2D2191EC92000F070B /* CalculationTableViewCell.swift */,
 				CE985F2B2191E203000F070B /* CalcTableViewController.swift */,
 				CEADBA5B218B4781003AB1BC /* Main.storyboard */,
-				CE17E4CD21AEBF5A00842EB4 /* Extensions */,
 				CE17E4C921AEBE1D00842EB4 /* ButtonsPage1.swift */,
 				CE17E4CB21AEBE2A00842EB4 /* ButtonsPage2.swift */,
 				CE7A35982195EC2A00852F6F /* CalcHistoryTableViewController.swift */,
@@ -241,7 +239,6 @@
 				CE17E4C321AE78A000842EB4 /* SettingsTableViewController.swift */,
 				CEADBA69218B4AC5003AB1BC /* Globals.swift */,
 				CE17E4C721AEBC0200842EB4 /* Calculation.swift */,
-				CE17E4C521AEBB9C00842EB4 /* DoubleExtension.swift */,
 				CEADBA5E218B4781003AB1BC /* Assets.xcassets */,
 				CEADBA60218B4781003AB1BC /* LaunchScreen.storyboard */,
 				CEADBA63218B4781003AB1BC /* Info.plist */,
@@ -385,7 +382,6 @@
 				CE25E4CC218F570C004352A6 /* MathParserErrors.swift in Sources */,
 				CE25E4F1218F570C004352A6 /* DecimalNumberExtractor.swift in Sources */,
 				CE985F2C2191E203000F070B /* CalcTableViewController.swift in Sources */,
-				CE17E4C621AEBB9C00842EB4 /* DoubleExtension.swift in Sources */,
 				CE25E4EC218F570C004352A6 /* OperatorTokenSet.swift in Sources */,
 				CE25E4DE218F570C004352A6 /* HexNumberExtractor.swift in Sources */,
 				CE25E4D8218F570C004352A6 /* Functions+Defaults.swift in Sources */,

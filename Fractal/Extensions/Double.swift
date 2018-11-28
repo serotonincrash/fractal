@@ -49,8 +49,10 @@ internal extension Double {
     func truncate(places : Int) -> Double {
         return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
     }
-    
-    func round(places: Int) -> Double {
-        return Double(pow(10.0, Double(places)) * self)/pow(10.0, Double(places))
+    func roundToDecimal(_ fractionDigits: Int) -> Double {
+        return Double(String(format: "%.\(fractionDigits)f", self))!
+    }
+    func getDecimal() -> Double {
+        return self.truncatingRemainder(dividingBy: 1)
     }
 }

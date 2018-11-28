@@ -8,11 +8,19 @@
 
 import Foundation
 var evaluator = Evaluator()
-func roundToPlaces(value:Double, places:Int) -> Double {
-    let divisor = pow(10.0, Double(places))
-    return round(value * divisor) / divisor
+var decimalPlaces: Int {
+    get {
+        if UserDefaults.standard.integer(forKey: "decimalPlaces") != 0 {
+            return UserDefaults.standard.integer(forKey: "decimalPlaces")
+        } else {
+            return 16
+        }
+    } set {
+        UserDefaults.standard.set(newValue, forKey: "decimalPlaces")
+        UserDefaults.standard.synchronize()
+    }
+    
 }
-
 // MARK: Parsing function
 func parseMath(calc: String) -> String? {
     var result: Double = 0
@@ -24,10 +32,12 @@ func parseMath(calc: String) -> String? {
         return ""
     }
     print(result.truncatingRemainder(dividingBy: 1))
+    print(calc.count)
+    print(String(result).count)
     if (result.truncatingRemainder(dividingBy: 1) < 0.00000000001 || result.truncatingRemainder(dividingBy: 1) > 0.9999999999) && result < Double(Int.max){
         return (String(Int(round(result))))
     } else {
-        return String(roundToPlaces(value: result, places: 16))
+        return String(result.roundToDecimal(decimalPlaces))
     }
 }
 
