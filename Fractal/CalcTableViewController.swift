@@ -21,7 +21,6 @@ class CalcTableViewController: UITableViewController {
         tableView.allowsSelection = false
         tableView.bounces = false
         Calculation.saveToFile(calcs: [])
-        evaluator.angleMeasurementMode = .degrees
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,6 +41,7 @@ class CalcTableViewController: UITableViewController {
             didDoMath = false
             switch data {
             case "=":
+                
                 var result = parseMath(calc: actualCalc)
                 if result == "" || result == "nan" {
                     sessionCalculations[0].result = "Error"

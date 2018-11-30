@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalcButtonsViewController: UIPageViewController, UIPageViewControllerDataSource {
+class CalcButtonsViewController: UIPageViewController, UIPageViewControllerDataSource, UIScrollViewDelegate {
     var calcButtonDelegate: CalcButtonDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +19,14 @@ class CalcButtonsViewController: UIPageViewController, UIPageViewControllerDataS
                                animated: true,
                                completion: nil)
         }
-        
-        // Do any additional setup after loading the view.
+        for subview in view.subviews {
+            if let scrollView = subview as? UIScrollView {
+                scrollView.delegate = self
+                break
+            }
+        }
+
     }
-    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         if let firstViewController = orderedViewControllers.first,

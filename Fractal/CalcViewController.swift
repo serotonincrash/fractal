@@ -22,13 +22,7 @@ class CalcViewController: UIViewController, CalcButtonDelegate {
     var calcTableViewController: CalcTableViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let angleMeasurementMode = UserDefaults.standard.string(forKey: "angleMeasurementMode") ?? "degrees"
-        if angleMeasurementMode == "degrees" {
-            evaluator.angleMeasurementMode = .degrees
-        } else {
-            evaluator.angleMeasurementMode = .radians
-        }
-        // Do any additional setup after loading the view, typically from a nib.
+        evaluator.angleMeasurementMode = angleMeasurement        // Do any additional setup after loading the view, typically from a nib.
     }
     func sendCalcs(_ calcs: [Calculation]) {
         calcTableViewController.updateCalcs(data: calcs)

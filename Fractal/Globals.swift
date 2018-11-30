@@ -8,12 +8,13 @@
 
 import Foundation
 var evaluator = Evaluator()
+// sig figs actually, but referred to as decimal places
 var decimalPlaces: Int {
     get {
         if UserDefaults.standard.integer(forKey: "decimalPlaces") != 0 {
             return UserDefaults.standard.integer(forKey: "decimalPlaces")
         } else {
-            return 16
+            return 15
         }
     } set {
         UserDefaults.standard.set(newValue, forKey: "decimalPlaces")
@@ -21,7 +22,24 @@ var decimalPlaces: Int {
     }
     
 }
-// MARK: Parsing function
+// angle measurement
+var angleMeasurement: Evaluator.AngleMode {
+    get {
+        let str = UserDefaults.standard.string(forKey: "angleMeasurementMode") ?? ""
+        if str == "" {
+            return .degrees
+        } else if str == "radians" {
+            return .radians
+        } else {
+            return .degrees
+        }
+    } set {
+        UserDefaults.standard.set(newValue, forKey: "angleMeasurementMode")
+        UserDefaults.standard.synchronize()
+    }
+    
+}
+// Parsing function
 func parseMath(calc: String) -> String? {
     var result: Double = 0
     do {
