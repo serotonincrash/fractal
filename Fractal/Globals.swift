@@ -40,10 +40,11 @@ var angleMeasurement: Evaluator.AngleMode {
     
 }
 // Parsing function
-func parseMath(calc: String) -> String? {
+func parseMath(calc: String, ans: String) -> String? {
     var result: Double = 0
+    let subs = ["an": Double(ans)]
     do {
-        result = try evaluator.evaluate(Expression(string: calc))
+        result = try evaluator.evaluate(Expression(string: calc), substitutions: subs as! Substitutions)
     } catch {
         let error = error as! MathParserError
         print(error.range)

@@ -15,6 +15,10 @@ class CalcTableViewController: UITableViewController {
     var ans: String = "0"
     var didDoMath: Bool = true
     var actualCalc = "0"
+    let operationsWith3Chars = [" + "," - "," × "," ÷ ","$an","ln("]
+    let operationsWith3CharNonSpaced = ["e()","π()"]
+    let operationsWith4Chars = ["sin(","cos(","tan(","log(","exp("]
+    let operationsWith5Chars = ["asin(","acos(","atan("," mod ","log2("]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -37,12 +41,13 @@ class CalcTableViewController: UITableViewController {
         if sessionCalculations[0].calc == "　" {
             didDoMath = true
         }
+        
         if didDoMath {
             didDoMath = false
             switch data {
             case "=":
                 
-                var result = parseMath(calc: actualCalc)
+                var result = parseMath(calc: actualCalc, ans: ans)
                 if result == "" || result == "nan" {
                     sessionCalculations[0].result = "Error"
                     sessionCalculations[0].calc = "　"
@@ -82,12 +87,48 @@ class CalcTableViewController: UITableViewController {
                 }
                 
             case "Del":
-                if sessionCalculations[0].calc.count == 1 {
+                if sessionCalculations[0].calc.count == 1 || actualCalc.count == 0 || sessionCalculations[0].calc.count == 0 || actualCalc.count == 1 {
                     if sessionCalculations[0].calc != "　" {
                         sessionCalculations[0] = Calculation(calc: "　", result: "　")
                         actualCalc = "0"
                         self.tableView.reloadData()
                     }
+                } else if actualCalc.count < 3 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
+                } else if operationsWith3Chars.contains(String(actualCalc[actualCalc.count - 3 ..< actualCalc.count])) {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc = String(actualCalc[0..<actualCalc.count - 3])
+                    self.tableView.reloadData()
+                } else if actualCalc.count < 4 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
+                } else if operationsWith4Chars.contains(String(actualCalc[actualCalc.count - 4 ..< actualCalc.count])) {
+                    sessionCalculations[0].calc = String(sessionCalculations[0].calc[0 ..< sessionCalculations[0].calc.count - 4])
+                    actualCalc = String(actualCalc[0..<actualCalc.count - 4])
+                    self.tableView.reloadData()
+                } else if actualCalc.count < 5 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
+                } else if operationsWith5Chars.contains(String(actualCalc[actualCalc.count - 5 ..< actualCalc.count])) {
+                    sessionCalculations[0].calc = String(sessionCalculations[0].calc[0 ..< sessionCalculations[0].calc.count - 5])
+                    actualCalc = String(actualCalc[0..<actualCalc.count - 5])
+                    self.tableView.reloadData()
+                } else if actualCalc.count < 6 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
+                } else if String(actualCalc[actualCalc.count - 8 ..< actualCalc.count]) == "Random()" {
+                    sessionCalculations[0].calc = String(sessionCalculations[0].calc[0 ..< sessionCalculations[0].calc.count - 8])
+                    actualCalc = String(actualCalc[0..<actualCalc.count - 8])
+                    self.tableView.reloadData()
+                }  else if actualCalc.count < 9 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
                 } else {
                     sessionCalculations[0].calc.removeLast()
                     actualCalc.removeLast()
@@ -104,19 +145,12 @@ class CalcTableViewController: UITableViewController {
             case "Ans":
                 if ans == "0.0" || ans == "0" {
                 } else if Double(ans)?.truncatingRemainder(dividingBy: 1) == 0 {
-                        if Double(ans)! > Double(Int.max) {
-                            sessionCalculations[0].calc = "Number too large"
-                            sessionCalculations[0].result = "　"
-                            ans = "0"
+                            sessionCalculations[0].calc = "Ans"
+                            actualCalc = "$an"
                             self.tableView.reloadData()
-                        } else {
-                            sessionCalculations[0].calc = "(Ans)"
-                            actualCalc = "(" + String(Int(ans)!) + ")"
-                            self.tableView.reloadData()
-                        }
                 } else {
-                    sessionCalculations[0].calc = "(Ans)"
-                    actualCalc = "(" + String(Double(ans)!) + ")"
+                    sessionCalculations[0].calc = "Ans"
+                    actualCalc = "$an"
                     self.tableView.reloadData()
                 }
             case "log2(":
@@ -141,7 +175,7 @@ class CalcTableViewController: UITableViewController {
              switch data {
              case "=":
                 didDoMath = true
-                var result = parseMath(calc: actualCalc)
+                var result = parseMath(calc: actualCalc, ans: ans)
                 if result == "" || result == "nan" {
                     sessionCalculations[0].result = "Error"
                     sessionCalculations[0].calc = "　"
@@ -183,12 +217,48 @@ class CalcTableViewController: UITableViewController {
                     }
                 }
              case "Del":
-                if sessionCalculations[0].calc.count == 1 {
+                if sessionCalculations[0].calc.count == 0 || actualCalc.count == 0 {
                     if sessionCalculations[0].calc != "　" {
                         sessionCalculations[0] = Calculation(calc: "　", result: "　")
                         actualCalc = "0"
                         self.tableView.reloadData()
                     }
+                } else if actualCalc.count < 3 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
+                } else if operationsWith3Chars.contains(String(actualCalc[actualCalc.count - 3 ..< actualCalc.count])) {
+                    sessionCalculations[0].calc = String(sessionCalculations[0].calc[0 ..< sessionCalculations[0].calc.count - 3])
+                    actualCalc = String(actualCalc[0..<actualCalc.count - 3])
+                    self.tableView.reloadData()
+                } else if actualCalc.count < 4 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
+                } else if operationsWith4Chars.contains(String(actualCalc[actualCalc.count - 4 ..< actualCalc.count])) {
+                    sessionCalculations[0].calc = String(sessionCalculations[0].calc[0 ..< sessionCalculations[0].calc.count - 4])
+                    actualCalc = String(actualCalc[0..<actualCalc.count - 4])
+                    self.tableView.reloadData()
+                } else if actualCalc.count < 5 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
+                } else if operationsWith5Chars.contains(String(actualCalc[actualCalc.count - 5 ..< actualCalc.count])) {
+                    sessionCalculations[0].calc = String(sessionCalculations[0].calc[0 ..< sessionCalculations[0].calc.count - 5])
+                    actualCalc = String(actualCalc[0..<actualCalc.count - 5])
+                    self.tableView.reloadData()
+                } else if actualCalc.count < 8 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
+                } else if String(actualCalc[actualCalc.count - 8 ..< actualCalc.count]) == "Random()" {
+                    sessionCalculations[0].calc = String(sessionCalculations[0].calc[0 ..< sessionCalculations[0].calc.count - 8])
+                    actualCalc = String(actualCalc[0..<actualCalc.count - 8])
+                    self.tableView.reloadData()
+                } else if actualCalc.count < 9 {
+                    sessionCalculations[0].calc.removeLast()
+                    actualCalc.removeLast()
+                    self.tableView.reloadData()
                 } else {
                     sessionCalculations[0].calc.removeLast()
                     actualCalc.removeLast()
@@ -242,6 +312,7 @@ class CalcTableViewController: UITableViewController {
                     self.tableView.reloadData()
             }
         }
+        print(actualCalc)
     }
 
     // MARK: - Table view data source
