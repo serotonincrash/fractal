@@ -38,22 +38,21 @@ class CalcTableViewController: UITableViewController {
     // MARK: Actually adding the data to the UILabels
     
     func evalData(data: String) {
-        if sessionCalculations[0].calc == "　" {
-            didDoMath = true
-        }
-        
         if didDoMath {
             didDoMath = false
             switch data {
             case "=":
-                
+                if actualCalc == "" {
+                    actualCalc = "0"
+                }
                 var result = parseMath(calc: actualCalc, ans: ans)
-                if result == "" || result == "nan" {
+                if result == "error" || result == "nan" {
                     sessionCalculations[0].result = "Error"
                     sessionCalculations[0].calc = "　"
                     ans = "0"
                     self.tableView.reloadData()
                 } else {
+
                     if Double(result!)!.truncatingRemainder(dividingBy: 1) == 0 {
                         if Double(result!)! > Double(Int.max) {
                             sessionCalculations[0].calc = "Number too large"
@@ -85,7 +84,6 @@ class CalcTableViewController: UITableViewController {
                         self.tableView.reloadData()
                     }
                 }
-                
             case "Del":
                 if sessionCalculations[0].calc.count == 1 || actualCalc.count == 0 || sessionCalculations[0].calc.count == 0 || actualCalc.count == 1 {
                     if sessionCalculations[0].calc != "　" {
@@ -174,9 +172,12 @@ class CalcTableViewController: UITableViewController {
         } else {
              switch data {
              case "=":
+                if actualCalc == "" {
+                    actualCalc = "0"
+                }
                 didDoMath = true
                 var result = parseMath(calc: actualCalc, ans: ans)
-                if result == "" || result == "nan" {
+                if result == "error" || result == "nan" {
                     sessionCalculations[0].result = "Error"
                     sessionCalculations[0].calc = "　"
                     ans = "0"

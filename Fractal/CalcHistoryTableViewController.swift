@@ -11,6 +11,8 @@ import UIKit
 class CalcHistoryTableViewController: UITableViewController {
     var calculations: [Calculation]! = []
     var CalcViewDelegate: CalcButtonDelegate?
+    let standard = UserDefaults.standard
+    var alertShown = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -18,6 +20,17 @@ class CalcHistoryTableViewController: UITableViewController {
 
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.lightGray
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if !standard.bool(forKey: "didLaunchHistory") && !alertShown {
+            let alert = UIAlertController(title: "History Page", message: "All your calculations will be displayed here.\n Press on any calculation to copy it.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Don't Show Again", style: .destructive, handler: { (_) in
+                self.standard.set(true, forKey: "didLaunchHistory")
+            }))
+            alert.addAction(.init(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            alertShown = true
+        }
     }
 
     // MARK: - Table view data source
@@ -34,11 +47,13 @@ class CalcHistoryTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return calculations.count
     }
-    
+    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
+        return .bottom
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! CalculationTableViewCell
         let animator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: {
-            let transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+            let transform = CGAffineTransform(translationX: 0, y: 500)
             cell.resultLabel.transform = transform
             cell.calculationLabel.transform = transform
             cell.copiedLabel.alpha = 1.0
@@ -110,6 +125,7 @@ class CalcHistoryTableViewController: UITableViewController {
         if segue.identifier == "unwindSegue" {
             let dest = segue.destination as! CalcViewController
             dest.sendCalcs(calculations)
+            dest.histAlertShown = alertShown
         }
     }
 

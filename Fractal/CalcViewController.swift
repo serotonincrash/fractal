@@ -20,13 +20,30 @@ class CalcViewController: UIViewController, CalcButtonDelegate {
     var currentButtonPressed: String = ""
     var calcButtonsViewController: CalcButtonsViewController!
     var calcTableViewController: CalcTableViewController!
+    let standard = UserDefaults.standard
+    var alertShown = false
+    var histAlertShown = false
     override func viewDidLoad() {
         super.viewDidLoad()
+
         evaluator.angleMeasurementMode = angleMeasurement        // Do any additional setup after loading the view, typically from a nib.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        if !alertShown && !standard.bool(forKey: "didLaunchApp") {
+                let alert = UIAlertController(title: "Welcome to Fractal!", message: "Swipe up to access advanced functionality.", preferredStyle: .alert)
+                alert.addAction(.init(title: "Don't Show Again", style: .destructive, handler: { (_) in
+                    self.standard.set(true, forKey: "didLaunchApp")
+                }))
+                alert.addAction(.init(title: "OK", style: .default))
+                self.present(alert, animated: true, completion: nil)
+                alertShown = true
+            }
+    }
+    
     func sendCalcs(_ calcs: [Calculation]) {
         calcTableViewController.updateCalcs(data: calcs)
     }
+    
     func sendPressed(_ key: String) {
         currentButtonPressed = key
         if currentButtonPressed == "Settings" {
@@ -44,6 +61,9 @@ class CalcViewController: UIViewController, CalcButtonDelegate {
     @IBAction func didPressHistoryButton(_ sender: Any) {
         performSegue(withIdentifier: "histSegue", sender: Any.self)
     }
+    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
+        return .bottom
+    }
     @IBAction func unwindToStart(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         
     }
@@ -59,8 +79,8 @@ class CalcViewController: UIViewController, CalcButtonDelegate {
             let nav = segue.destination as! UINavigationController
             let dest = nav.viewControllers[0] as! CalcHistoryTableViewController
             dest.calculations = Calculation.loadFromFile() ?? []
+            dest.alertShown = histAlertShown
         }
     }
-
 }
 

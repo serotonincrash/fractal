@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,12 +14,12 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="Calc View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CalcViewController" customModule="Fractal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
-                                <rect key="frame" x="0.0" y="437" width="375" height="375"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
+                                <rect key="frame" x="0.0" y="361" width="320" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QIC-JF-eN1" secondAttribute="height" multiplier="1:1" id="kka-c8-8uS"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztq-Na-MAK" customClass="calcWindowContainerView" customModule="Fractal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ztq-Na-MAK" secondAttribute="height" multiplier="1:1" id="oGW-7Q-OX1"/>
                                 </constraints>
@@ -37,7 +37,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xku-5g-FJQ">
-                                <rect key="frame" x="315" y="54" width="50" height="30"/>
+                                <rect key="frame" x="260" y="30" width="50" height="30"/>
                                 <state key="normal" title="History">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -78,7 +78,7 @@
             <objects>
                 <tableViewController title="Settings View Controller" id="Gc8-bo-d53" customClass="SettingsTableViewController" customModule="Fractal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CrN-h4-3vw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,14 +86,14 @@
                             <tableViewSection id="joc-DV-Y55">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="100" id="tiI-7M-iwN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tiI-7M-iwN" id="NAk-z1-Bg1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bJU-5R-jbg">
-                                                    <rect key="frame" x="224" y="36" width="131" height="29"/>
+                                                    <rect key="frame" x="169" y="36" width="131" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bJU-5R-jbg" secondAttribute="height" multiplier="131:28" id="gBU-GY-RNQ"/>
                                                     </constraints>
@@ -107,7 +107,7 @@
                                                     </connections>
                                                 </segmentedControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle Measurement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5L-dN-d5p">
-                                                    <rect key="frame" x="20" y="39.333333333333336" width="153.33333333333334" height="21"/>
+                                                    <rect key="frame" x="20" y="39.5" width="153.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -123,27 +123,27 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingsCell" rowHeight="100" id="sxl-Cc-Z7G">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="100" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sxl-Cc-Z7G" id="Vbl-9w-IbT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minimumValue="1" maximumValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="FgV-QS-A8m">
-                                                    <rect key="frame" x="261" y="35.333333333333336" width="94" height="29.000000000000007"/>
+                                                    <rect key="frame" x="206" y="35.5" width="94" height="29"/>
                                                     <color key="tintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="decimalPlacesChanged:" destination="Gc8-bo-d53" eventType="valueChanged" id="VRS-v3-M5T"/>
                                                     </connections>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CF-A3-tP8">
-                                                    <rect key="frame" x="233" y="39.333333333333336" width="18" height="21"/>
+                                                    <rect key="frame" x="178" y="39.5" width="18" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Significant Figures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwb-HP-UCM">
-                                                    <rect key="frame" x="20" y="39.333333333333336" width="142" height="21"/>
+                                                    <rect key="frame" x="20" y="39.5" width="142" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -193,29 +193,29 @@
             <objects>
                 <tableViewController id="qHE-JY-zUu" customClass="CalcHistoryTableViewController" customModule="Fractal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xrs-Ab-9rm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="histCell" rowHeight="200" id="7RX-oA-6Ve" customClass="CalculationTableViewCell" customModule="Fractal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7RX-oA-6Ve" id="z3x-le-mJp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="x3n-BV-3Vr">
-                                            <rect key="frame" x="10" y="0.0" width="355" height="199.66666666666666"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="199.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calc" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="FEn-lg-QLa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="48"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ans" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="AEM-Gu-tyt">
-                                                    <rect key="frame" x="0.0" y="80" width="355" height="119.66666666666669"/>
+                                                    <rect key="frame" x="0.0" y="80" width="300" height="119.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="72"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -224,7 +224,7 @@
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copied" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VKm-Mm-o69">
-                                            <rect key="frame" x="5" y="0.0" width="365" height="199.66666666666666"/>
+                                            <rect key="frame" x="5" y="0.0" width="310" height="199.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="72"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -274,7 +274,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="CalcWindowViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p06-Rd-0gD" customClass="CalcTableViewController" customModule="Fractal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="-1" sectionFooterHeight="-1" id="zSd-b5-eCt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -283,23 +283,23 @@
                         <color key="sectionIndexTrackingBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="calcCell" id="Fpl-bf-4Ka" customClass="CalculationTableViewCell" customModule="Fractal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fpl-bf-4Ka" id="SRG-6B-ngb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="37W-uO-zbd">
-                                            <rect key="frame" x="5" y="0.0" width="360" height="199.66666666666666"/>
+                                            <rect key="frame" x="5" y="0.0" width="360" height="199.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calc" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="PL0-jv-vLg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="72"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="71.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ans" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="mfW-39-AXT">
-                                                    <rect key="frame" x="0.0" y="72" width="360" height="127.66666666666669"/>
+                                                    <rect key="frame" x="0.0" y="71.5" width="360" height="128"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="64"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -357,7 +357,7 @@
                                     <button verifyAmbiguity="ignoreSizes" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYh-TI-PB9" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="√a">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -369,6 +369,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="UEf-6c-guF"/>
@@ -379,7 +380,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9t-wT-ff4" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="(">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -390,6 +391,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="CxW-Gv-k7U"/>
@@ -400,7 +402,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ml-Lx-0wF" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title=")">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -411,6 +413,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="KNf-6b-tXU"/>
@@ -421,7 +424,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vZ-Fm-sUW" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="Ans">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -432,6 +435,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="Jh3-4X-sNP"/>
@@ -442,7 +446,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyL-1D-dQf" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="Del">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -453,6 +457,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="gve-WS-MSH"/>
@@ -483,6 +488,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="lji-Qp-IgD"/>
@@ -504,6 +510,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="Ulz-eM-Xe2"/>
@@ -525,6 +532,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="vce-xG-Uj3"/>
@@ -546,6 +554,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="srn-Yn-KwV"/>
@@ -567,6 +576,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="kNK-0O-mIb"/>
@@ -582,7 +592,7 @@
                                     <button verifyAmbiguity="ignoreSizes" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kK-4Z-vrv" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="4">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -594,6 +604,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="613-KA-1J5"/>
@@ -604,7 +615,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-yG-wYn" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="5">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -615,6 +626,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="Cqj-LG-cJc"/>
@@ -625,7 +637,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h77-tG-TJW" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="6">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -636,6 +648,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="GMb-Xh-glp"/>
@@ -646,7 +659,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPX-vL-BpL" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -657,6 +670,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="QbW-dL-mGk"/>
@@ -667,7 +681,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XO6-Z6-Xuu" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="-">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -678,6 +692,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="htt-wZ-9Uw"/>
@@ -693,7 +708,7 @@
                                     <button verifyAmbiguity="ignoreSizes" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhP-tZ-Hne" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -705,6 +720,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="pKy-fP-HcQ"/>
@@ -715,7 +731,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fuv-ZK-IxC" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -726,6 +742,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="JFm-5a-gZY"/>
@@ -736,7 +753,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-76-oOJ" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="3">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -747,6 +764,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="IVe-gA-Man"/>
@@ -757,7 +775,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05p-Ng-cL1" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="%">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -768,6 +786,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="bsQ-d8-cUy"/>
@@ -778,7 +797,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qL4-HQ-9re" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="CA">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -789,6 +808,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="0qH-Il-ZQ7"/>
@@ -807,7 +827,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="P0y-1I-DEB" secondAttribute="height" multiplier="1:1" id="uDN-81-coc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -819,6 +839,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="vqt-7U-eAy"/>
@@ -832,7 +853,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="KZh-SX-Qbv" secondAttribute="height" multiplier="1:1" id="oVN-G1-8iP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title=".">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -843,6 +864,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="p5S-eW-9Q6"/>
@@ -856,7 +878,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="MaZ-SV-MeC" secondAttribute="height" multiplier="1:1" id="CWm-Gc-b0u"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="×10ⁿ">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -867,6 +889,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="0lg-YX-E61"/>
@@ -880,7 +903,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xfe-Fk-cBE" secondAttribute="height" multiplier="2:1" id="x4r-mS-FYl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="=">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -891,6 +914,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="1iZ-7d-zxA" eventType="touchDragOutside" id="2e6-eo-RPe"/>
@@ -954,7 +978,7 @@
                                     <button verifyAmbiguity="ignoreSizes" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oib-gl-PXx" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="n!">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -966,6 +990,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="cJv-84-j3F"/>
@@ -976,7 +1001,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEc-wH-0g7" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="ln">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -987,6 +1012,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="SKZ-eU-Yem"/>
@@ -997,7 +1023,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrd-FN-NmG" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="log">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1008,6 +1034,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="G3p-12-VKz"/>
@@ -1018,7 +1045,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wu-mM-tBF" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="log₂">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1029,6 +1056,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="Lre-CN-fZV"/>
@@ -1039,7 +1067,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AX4-om-ygQ" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="Del">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1050,6 +1078,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="UV1-AP-8P6"/>
@@ -1068,7 +1097,7 @@
                                     <button verifyAmbiguity="ignoreSizes" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH0-YX-OWF" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="π">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1080,6 +1109,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="4nV-rR-pnf"/>
@@ -1090,7 +1120,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVA-Zn-6kU" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="sin">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1101,6 +1131,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="fEL-r1-6IE"/>
@@ -1111,7 +1142,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8V-NX-7Aq" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="cos">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1122,6 +1153,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="qYt-R7-4ub"/>
@@ -1132,7 +1164,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yh-is-xmr" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="tan">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1143,6 +1175,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="3AV-Pk-FlF"/>
@@ -1153,7 +1186,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vO7-7n-QUP" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="mod">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1164,6 +1197,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="iMY-f4-vXj"/>
@@ -1191,6 +1225,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="2Em-K4-xa9"/>
@@ -1212,6 +1247,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="7ja-EP-c26"/>
@@ -1233,6 +1269,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="7YW-c1-hmk"/>
@@ -1254,6 +1291,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="WUH-N6-cEi"/>
@@ -1264,7 +1302,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMg-F4-mBZ" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="26"/>
                                         <state key="normal" title="Rand">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1275,6 +1313,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="nr3-1g-1Pg"/>
@@ -1290,7 +1329,7 @@
                                     <button verifyAmbiguity="ignoreSizes" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dc-jw-DRl" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="eⁿ">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1302,6 +1341,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="qe9-9N-0bX"/>
@@ -1312,7 +1352,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k68-3O-n3Z" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="10ⁿ">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1323,6 +1363,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="OJL-Mp-BzN"/>
@@ -1333,7 +1374,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZD-Jh-OeJ" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="∛">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1344,6 +1385,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="DVG-an-A5Z"/>
@@ -1354,7 +1396,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ2-Va-4zU" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" title="Settings">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1365,6 +1407,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="f2k-Al-tS0"/>
@@ -1375,7 +1418,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPW-EQ-CYL" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="CA">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1386,6 +1429,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="via-eD-TI1"/>
@@ -1404,7 +1448,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vLO-co-x3f" secondAttribute="height" multiplier="1:1" id="aVm-MT-tSw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="a²"/>
                                         <userDefinedRuntimeAttributes>
@@ -1414,6 +1458,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="fxL-ib-vwV"/>
@@ -1427,7 +1472,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="anQ-da-cp7" secondAttribute="height" multiplier="1:1" id="iIo-RB-N5R"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="aⁿ">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1438,6 +1483,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="dQl-y3-XJw"/>
@@ -1451,7 +1497,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="br4-oH-Jnz" secondAttribute="height" multiplier="1:1" id="0l9-li-zG6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="a⁻¹">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1462,6 +1508,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="bru-tl-fsB"/>
@@ -1475,7 +1522,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7Yc-f6-iN0" secondAttribute="height" multiplier="1:1" id="Uqm-gD-59c"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title=",">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1486,6 +1533,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.25"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="MR3-Ee-hJW"/>
@@ -1496,7 +1544,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixl-KT-60N" customClass="CustomButton" customModule="Fractal" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="75"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
                                         <state key="normal" title="=">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1507,6 +1555,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsTitleFontSizeToFitWidth" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="buttonDragged:" destination="ViN-nG-6m5" eventType="touchDragOutside" id="xPJ-Z0-QO1"/>
@@ -1520,7 +1569,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djc-pB-UaV">
-                                <rect key="frame" x="175" y="39" width="25" height="36"/>
+                                <rect key="frame" x="175" y="-5" width="25" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1557,7 +1606,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBz-W6-9nY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3098" y="510"/>
+            <point key="canvasLocation" x="-3361" y="509"/>
         </scene>
         <!--historyNav-->
         <scene sceneID="jQo-tt-2tf">
@@ -1565,7 +1614,7 @@
                 <navigationController title="historyNav" automaticallyAdjustsScrollViewInsets="NO" id="sP9-m4-WvO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="fky-CC-ces">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1583,7 +1632,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bmt-HP-XUj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="oTn-iQ-V5I">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>

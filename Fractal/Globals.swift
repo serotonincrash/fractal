@@ -37,8 +37,8 @@ var angleMeasurement: Evaluator.AngleMode {
         UserDefaults.standard.set(newValue, forKey: "angleMeasurementMode")
         UserDefaults.standard.synchronize()
     }
-    
 }
+
 // Parsing function
 func parseMath(calc: String, ans: String) -> String? {
     var result: Double = 0
@@ -48,7 +48,7 @@ func parseMath(calc: String, ans: String) -> String? {
     } catch {
         let error = error as! MathParserError
         print(error.range)
-        return ""
+        return "error"
     }
     print(result.truncatingRemainder(dividingBy: 1))
     print(calc.count)
@@ -59,4 +59,5 @@ func parseMath(calc: String, ans: String) -> String? {
         return String(result.roundToDecimal(decimalPlaces))
     }
 }
+
 

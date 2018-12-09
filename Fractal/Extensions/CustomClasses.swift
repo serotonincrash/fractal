@@ -28,10 +28,17 @@ import UIKit
         }
     }
     
+    @IBInspectable var adjustsTitleFontSizeToFitWidth: Bool = false {
+        didSet {
+            self.titleLabel?.adjustsFontSizeToFitWidth = adjustsTitleFontSizeToFitWidth
+        }
+    }
+    
     override public func layoutSubviews() {
         super.layoutSubviews()
         clipsToBounds = true
     }
+    
 }
 
 extension UIView {

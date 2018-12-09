@@ -152,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				CE25E4BC218F570B004352A6 /* String.swift */,
+				CEBC64BC218EB45B001A51A3 /* CustomClasses.swift */,
 				CE25E4C0218F570B004352A6 /* Double.swift */,
 			);
 			path = Extensions;
@@ -234,7 +235,6 @@
 				CE17E4C921AEBE1D00842EB4 /* ButtonsPage1.swift */,
 				CE17E4CB21AEBE2A00842EB4 /* ButtonsPage2.swift */,
 				CE7A35982195EC2A00852F6F /* CalcHistoryTableViewController.swift */,
-				CEBC64BC218EB45B001A51A3 /* CustomClasses.swift */,
 				CE6150B8218DE82800B6923F /* CalcButtonsViewController.swift */,
 				CE17E4C321AE78A000842EB4 /* SettingsTableViewController.swift */,
 				CEADBA69218B4AC5003AB1BC /* Globals.swift */,
