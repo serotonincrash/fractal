@@ -15,10 +15,10 @@ class CalcTableViewController: UITableViewController {
     var ans: String = "0"
     var didDoMath: Bool = true
     var actualCalc = "0"
-    let operationsWith3Chars = [" + "," - "," × "," ÷ ","$an","ln("]
+    let operationsWith3Chars = [" + "," - "," × "," ÷ ","ln("]
     let operationsWith3CharNonSpaced = ["e()","π()"]
     let operationsWith4Chars = ["sin(","cos(","tan(","log(","exp("]
-    let operationsWith5Chars = ["asin(","acos(","atan("," mod ","log2("]
+    let operationsWith5Chars = ["asin(","acos(","atan("," mod ","log2(","($an)"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -38,6 +38,7 @@ class CalcTableViewController: UITableViewController {
     // MARK: Actually adding the data to the UILabels
     
     func evalData(data: String) {
+        print(didDoMath)
         if didDoMath {
             didDoMath = false
             switch data {
@@ -83,6 +84,7 @@ class CalcTableViewController: UITableViewController {
                         Calculation.saveToFile(calcs: calculations)
                         self.tableView.reloadData()
                     }
+                    didDoMath = true
                 }
             case "Del":
                 if sessionCalculations[0].calc.count == 1 || actualCalc.count == 0 || sessionCalculations[0].calc.count == 0 || actualCalc.count == 1 {
@@ -142,13 +144,14 @@ class CalcTableViewController: UITableViewController {
                 self.tableView.reloadData()
             case "Ans":
                 if ans == "0.0" || ans == "0" {
+                    
                 } else if Double(ans)?.truncatingRemainder(dividingBy: 1) == 0 {
-                            sessionCalculations[0].calc = "Ans"
-                            actualCalc = "$an"
+                            sessionCalculations[0].calc = "(Ans)"
+                            actualCalc = "($an)"
                             self.tableView.reloadData()
                 } else {
-                    sessionCalculations[0].calc = "Ans"
-                    actualCalc = "$an"
+                    sessionCalculations[0].calc = "(Ans)"
+                    actualCalc = "($an)"
                     self.tableView.reloadData()
                 }
             case "log2(":
@@ -162,6 +165,22 @@ class CalcTableViewController: UITableViewController {
             case "π()":
                 sessionCalculations[0].calc = "π"
                 actualCalc = "π()"
+                self.tableView.reloadData()
+            case " + ":
+                sessionCalculations[0].calc = "Ans + "
+                actualCalc = "$an + "
+                self.tableView.reloadData()
+            case " - ":
+                sessionCalculations[0].calc = "Ans - "
+                actualCalc = "$an  "
+                self.tableView.reloadData()
+            case " ÷ ":
+                sessionCalculations[0].calc = "Ans ÷ "
+                actualCalc = "$an ÷ "
+                self.tableView.reloadData()
+            case " × ":
+                sessionCalculations[0].calc = "Ans × "
+                actualCalc = "($an) × "
                 self.tableView.reloadData()
             default:
                 sessionCalculations[0].result = "　"
@@ -216,6 +235,7 @@ class CalcTableViewController: UITableViewController {
                         Calculation.saveToFile(calcs: calculations)
                         self.tableView.reloadData()
                     }
+                    didDoMath = true
                 }
              case "Del":
                 if sessionCalculations[0].calc.count == 0 || actualCalc.count == 0 {
@@ -276,24 +296,22 @@ class CalcTableViewController: UITableViewController {
              case "Ans":
                 print(ans)
                 if ans == "0.0" || ans == "0" {
-                    self.tableView.reloadData()
-                } else if Double(ans)!.remainder(dividingBy: 1) == 0 {
-                    if Double(ans)! > Double(Int.max) {
-                        sessionCalculations[0].calc = "Number too large"
-                        sessionCalculations[0].result = "　"
-                        ans = "0"
-                        actualCalc = "0"
-                        self.tableView.reloadData()
-                        
-                    } else {
-                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(Ans)"
-                        actualCalc = actualCalc + "(" + String(Int(ans)!) + ")"
+                } else if Double(ans)?.truncatingRemainder(dividingBy: 1) == 0 {
+                    if actualCalc == "0" {
+                        sessionCalculations[0].calc = "(Ans)"
+                        actualCalc = "($an)"
                         self.tableView.reloadData()
                     }
                 } else {
-                    sessionCalculations[0].calc = sessionCalculations[0].calc + "(Ans)"
-                    actualCalc = actualCalc + "(" + String(Double(ans)!) + ")"
-                    self.tableView.reloadData()
+                    if actualCalc == "0" {
+                        sessionCalculations[0].calc = "(Ans)"
+                        actualCalc = "($an)"
+                        self.tableView.reloadData()
+                    } else {
+                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(Ans)"
+                        actualCalc = actualCalc + "($an)"
+                        self.tableView.reloadData()
+                    }
                 }
              case "e()":
                 sessionCalculations[0].calc = sessionCalculations[0].calc + "e"

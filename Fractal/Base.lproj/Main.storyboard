@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIC-JF-eN1">
-                                <rect key="frame" x="0.0" y="361" width="320" height="119"/>
+                                <rect key="frame" x="0.0" y="160" width="320" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QIC-JF-eN1" secondAttribute="height" multiplier="1:1" id="kka-c8-8uS"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztq-Na-MAK" customClass="calcWindowContainerView" customModule="Fractal" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="40" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ztq-Na-MAK" secondAttribute="height" multiplier="1:1" id="oGW-7Q-OX1"/>
                                 </constraints>
@@ -290,16 +290,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="37W-uO-zbd">
-                                            <rect key="frame" x="5" y="0.0" width="360" height="199.5"/>
+                                            <rect key="frame" x="5" y="0.0" width="305" height="199.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calc" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="PL0-jv-vLg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="360" height="71.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="305" height="71.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ans" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="mfW-39-AXT">
-                                                    <rect key="frame" x="0.0" y="71.5" width="360" height="128"/>
+                                                    <rect key="frame" x="0.0" y="71.5" width="305" height="128"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="64"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -931,7 +931,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4pz-K0-TFL" secondAttribute="trailing" id="1oX-9A-hrI"/>
                             <constraint firstItem="P4f-XC-CrH" firstAttribute="top" secondItem="EpG-lX-6N5" secondAttribute="bottom" id="33y-VM-AIh"/>
@@ -1575,7 +1575,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NfP-aA-ikt" secondAttribute="trailing" id="0dX-oB-dj0"/>
                             <constraint firstItem="NfP-aA-ikt" firstAttribute="width" secondItem="NfP-aA-ikt" secondAttribute="height" multiplier="5:1" id="1XG-lP-xW6"/>
@@ -1614,7 +1614,7 @@
                 <navigationController title="historyNav" automaticallyAdjustsScrollViewInsets="NO" id="sP9-m4-WvO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="fky-CC-ces">
-                        <rect key="frame" x="0.0" y="20" width="320" height="102"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1632,7 +1632,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bmt-HP-XUj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="oTn-iQ-V5I">
-                        <rect key="frame" x="0.0" y="20" width="320" height="102"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
