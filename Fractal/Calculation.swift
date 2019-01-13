@@ -35,4 +35,5 @@ class Calculation: Encodable, Decodable {
         guard let decodedCalcs = try? propertyListDecoder.decode(Array<Calculation>.self, from: retrievedCalcsData) else { return nil }
         return decodedCalcs
     }
+    
 }

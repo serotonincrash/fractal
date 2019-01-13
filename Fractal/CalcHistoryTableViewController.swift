@@ -73,9 +73,8 @@ class CalcHistoryTableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "histCell", for: indexPath) as! CalculationTableViewCell
-            cell.calculationLabel.text = self.calculations[indexPath.row].result
-            cell.resultLabel.text = self.calculations[indexPath.row].calc
-        // Configure the cell...
+        cell.calculationLabel.text = self.calculations[indexPath.row].result
+        cell.resultLabel.text = self.calculations[indexPath.row].calc
         return cell
     }
     /*
