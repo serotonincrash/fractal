@@ -38,7 +38,6 @@ class CalcTableViewController: UITableViewController {
     // MARK: Actually adding the data to the UILabels
     
     func evalData(data: String) {
-        print(actualCalc)
         print(didDoMath)
         if didDoMath {
             didDoMath = false
@@ -122,6 +121,10 @@ class CalcTableViewController: UITableViewController {
                         actualCalc = "0"
                         self.tableView.reloadData()
                     }
+                } else if actualCalc.count == 1 {
+                    sessionCalculations[0] = Calculation(calc: "　", result: "　")
+                    actualCalc = "0"
+                    self.tableView.reloadData()
                 } else if actualCalc.count < 3 {
                     sessionCalculations[0].calc.removeLast()
                     actualCalc.removeLast()
@@ -228,7 +231,7 @@ class CalcTableViewController: UITableViewController {
                 self.tableView.reloadData()
             case " - ":
                 sessionCalculations[0].calc = "Ans - "
-                actualCalc = "$an  "
+                actualCalc = "$an - "
                 self.tableView.reloadData()
             case " ÷ ":
                 sessionCalculations[0].calc = "Ans ÷ "
@@ -326,6 +329,10 @@ class CalcTableViewController: UITableViewController {
                         actualCalc = "0"
                         self.tableView.reloadData()
                     }
+                } else if actualCalc.count == 1 {
+                    sessionCalculations[0] = Calculation(calc: "　", result: "　")
+                    actualCalc = "0"
+                    self.tableView.reloadData()
                 } else if actualCalc.count < 3 {
                     sessionCalculations[0].calc.removeLast()
                     actualCalc.removeLast()
@@ -438,19 +445,14 @@ class CalcTableViewController: UITableViewController {
                 actualCalc = actualCalc + "log2("
                 self.tableView.reloadData()
              default:
-                if actualCalc == "0" {
-                    sessionCalculations[0].calc = data
-                    actualCalc = data
-                    self.tableView.reloadData()
-                } else {
                     sessionCalculations[0].calc = sessionCalculations[0].calc + data
                     actualCalc = actualCalc + data
                     self.tableView.reloadData()
-                }
-                
             }
         }
         print(actualCalc)
+        print("label text",sessionCalculations[0].calc)
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -474,9 +476,9 @@ class CalcTableViewController: UITableViewController {
         
         let calcCell = cell.calculationLabel
         let resultCell = cell.resultLabel
-            calcCell?.text = sessionCalculations[indexPath.row].result
-            resultCell?.text = sessionCalculations[indexPath.row].calc
-        
+        calcCell?.text = sessionCalculations[indexPath.row].result
+        resultCell?.text = sessionCalculations[indexPath.row].calc
+        print("updated resultCell with", sessionCalculations[indexPath.row].calc)
         // Configure the cell...
 
         return cell

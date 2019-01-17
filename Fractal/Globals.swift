@@ -45,8 +45,6 @@ func parseMath(calc: String, ans: String) -> String? {
     var result: Decimal = 0
     
     let subs = ["an": (ans)]
-    
-    print(subs["an"])
         do {
             result = try Decimal(floatLiteral: evaluator.evaluate(Expression(string: calc), substitutions: subs as! Substitutions))
         } catch {
@@ -57,8 +55,6 @@ func parseMath(calc: String, ans: String) -> String? {
     if result > 10000000000 || result < 0.00000000001 {
         formatter.numberStyle = .scientific
         formatter.exponentSymbol = "×10^"
-    } else if result > Decimal(sign: .plus, exponent: 150, significand: 1) {
-        return "inf"
     }
     print("result",result)
     return formatter.string(for: result)
