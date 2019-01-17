@@ -41,25 +41,32 @@ var angleMeasurement: Evaluator.AngleMode {
 
 // Parsing function
 func parseMath(calc: String, ans: String) -> String? {
-    var result: Double = 0
     evaluator.angleMeasurementMode = angleMeasurement
-    let subs = ["an": Double(ans)]
-    do {
-        result = try evaluator.evaluate(Expression(string: calc), substitutions: subs as! Substitutions)
-    } catch {
-        let error = error as! MathParserError
-        print(error.range)
-        return "error"
+    var result: Decimal = 0
+    
+    let subs = ["an": (ans)]
+    
+    print(subs["an"])
+        do {
+            result = try Decimal(floatLiteral: evaluator.evaluate(Expression(string: calc), substitutions: subs as! Substitutions))
+        } catch {
+            let error = error as! MathParserError
+            print(error.range)
+            return "error"
+        }
+    if result > 10000000000 || result < 0.00000000001 {
+        formatter.numberStyle = .scientific
+        formatter.exponentSymbol = "×10^"
+    } else if result > Decimal(sign: .plus, exponent: 150, significand: 1) {
+        return "inf"
     }
-    print(result.truncatingRemainder(dividingBy: 1))
-    print(calc.count)
-    print(String(result).count)
-    if abs(result.truncatingRemainder(dividingBy: 1)) < 0.00000000001 || abs(result.truncatingRemainder(dividingBy: 1)) > 0.9999999999 && result < Double(Int.max) {
-        print("number is integer, rounding off.")
-        return (String(Int(round(result))))
-    } else {
-        return String(result.roundToDecimal(decimalPlaces))
-    }
+    print("result",result)
+    return formatter.string(for: result)
 }
+let formatter = NumberFormatter()
+
+
+// Is it an integer?
+
 
 

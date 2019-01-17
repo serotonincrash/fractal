@@ -38,6 +38,7 @@ class CalcTableViewController: UITableViewController {
     // MARK: Actually adding the data to the UILabels
     
     func evalData(data: String) {
+        print(actualCalc)
         print(didDoMath)
         if didDoMath {
             didDoMath = false
@@ -53,64 +54,64 @@ class CalcTableViewController: UITableViewController {
                     ans = "0"
                     self.tableView.reloadData()
                 } else {
-
-                    if Double(result!)!.truncatingRemainder(dividingBy: 1) == 0 {
-                        if Double(result!)! > Double(Int.max) {
+                        if result == "inf" {
                             sessionCalculations[0].calc = "Number too large"
                             sessionCalculations[0].result = "　"
+                            ans = "0"
                             self.tableView.reloadData()
                         } else {
-                            result = String(Int(Double(result!)!))
-                            sessionCalculations[0].result = sessionCalculations[0].calc
-                            sessionCalculations[0].calc = String(result!)
-                            actualCalc = String(result!)
-                            ans = String(result!)
-                            didDoMath = true
-                            let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
-                            if let lastCalc = calculations.last {
-                                if !(lastCalc.calc == temp.calc && lastCalc.result == temp.result) {
+                            if Decimal(string: result!)!.isWholeNumber {
+                                sessionCalculations[0].result = sessionCalculations[0].calc
+                                sessionCalculations[0].calc = String(result!)
+                                actualCalc = String(result!)
+                                ans = String(result!)
+                                didDoMath = true
+                                let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
+                                if let lastCalc = calculations.last {
+                                    if !(lastCalc.calc == temp.calc && lastCalc.result == temp.result) {
+                                        if !(temp.calc == "0" && temp.result == "　") {
+                                            calculations.append(temp)
+                                            print(calculations)
+                                            Calculation.saveToFile(calcs: calculations)
+                                        }
+                                        
+                                    }
+                                } else {
                                     if !(temp.calc == "0" && temp.result == "　") {
                                         calculations.append(temp)
                                         print(calculations)
                                         Calculation.saveToFile(calcs: calculations)
+                                        
                                     }
-
                                 }
                             } else {
-                                if !(temp.calc == "0" && temp.result == "　") {
-                                    calculations.append(temp)
-                                    print(calculations)
-                                    Calculation.saveToFile(calcs: calculations)
-
+                                sessionCalculations[0].result = sessionCalculations[0].calc
+                                sessionCalculations[0].calc = String(result!)
+                                actualCalc = String(result!)
+                                ans = String(result!)
+                                didDoMath = true
+                                let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
+                                if let lastCalc = calculations.last {
+                                    if !(lastCalc.calc == temp.calc && lastCalc.result == temp.result) {
+                                        if !(temp.calc == "0" && temp.result == "　") {
+                                            calculations.append(temp)
+                                            print(calculations)
+                                            Calculation.saveToFile(calcs: calculations)
+                                        }
+                                    }
+                                } else {
+                                    if !(temp.calc == "0" && temp.result == "　") {
+                                        calculations.append(temp)
+                                        print(calculations)
+                                        Calculation.saveToFile(calcs: calculations)
+                                        
+                                    }
+                                    
                                 }
                             }
-                            
-                        }
-                    } else {
-                        sessionCalculations[0].result = sessionCalculations[0].calc
-                        sessionCalculations[0].calc = String(result!)
-                        actualCalc = String(result!)
-                        ans = String(result!)
-                        didDoMath = true
-                        let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
-                        if let lastCalc = calculations.last {
-                            if !(lastCalc.calc == temp.calc && lastCalc.result == temp.result) {
-                                if !(temp.calc == "0" && temp.result == "　") {
-                                    calculations.append(temp)
-                                    print(calculations)
-                                    Calculation.saveToFile(calcs: calculations)
-                                }
-                            }
-                        } else {
-                            if !(temp.calc == "0" && temp.result == "　") {
-                                calculations.append(temp)
-                                print(calculations)
-                                Calculation.saveToFile(calcs: calculations)
-                                
-                            }
-                            
-                        }
                     }
+                            
+
                     didDoMath = true
                     self.tableView.reloadData()
                 }
@@ -249,27 +250,27 @@ class CalcTableViewController: UITableViewController {
                 if actualCalc == "" {
                     actualCalc = "0"
                 }
-                didDoMath = true
                 var result = parseMath(calc: actualCalc, ans: ans)
                 if result == "error" || result == "nan" {
                     sessionCalculations[0].result = "Error"
                     sessionCalculations[0].calc = "　"
                     ans = "0"
+                    self.tableView.reloadData()
                 } else {
-                    if Double(result!)!.truncatingRemainder(dividingBy: 1) == 0 {
-                        if Double(result!)! > Double(Int.max) {
-                            sessionCalculations[0].calc = "Number too large"
-                            sessionCalculations[0].result = "　"
-                            self.tableView.reloadData()
-                        } else {
-                            result = String(Int(Double(result!)!))
+                    if result == "inf" {
+                        sessionCalculations[0].calc = "Number too large"
+                        sessionCalculations[0].result = "　"
+                        ans = "0"
+                        self.tableView.reloadData()
+                    } else {
+                        let decimal = Decimal(string: result!)
+                        if Decimal(string: result!)!.isWholeNumber {
                             sessionCalculations[0].result = sessionCalculations[0].calc
                             sessionCalculations[0].calc = String(result!)
                             actualCalc = String(result!)
                             ans = String(result!)
                             didDoMath = true
                             let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
-                            print(temp)
                             if let lastCalc = calculations.last {
                                 if !(lastCalc.calc == temp.calc && lastCalc.result == temp.result) {
                                     if !(temp.calc == "0" && temp.result == "　") {
@@ -277,43 +278,46 @@ class CalcTableViewController: UITableViewController {
                                         print(calculations)
                                         Calculation.saveToFile(calcs: calculations)
                                     }
-
+                                    
                                 }
                             } else {
                                 if !(temp.calc == "0" && temp.result == "　") {
                                     calculations.append(temp)
                                     print(calculations)
                                     Calculation.saveToFile(calcs: calculations)
+                                    
                                 }
                             }
-                        }
-                        
-                    } else {
-                        sessionCalculations[0].result = sessionCalculations[0].calc
-                        sessionCalculations[0].calc = String(result!)
-                        actualCalc = String(result!)
-                        ans = String(result!)
-                        didDoMath = true
-                        let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
-                        print(temp)
-                        if let lastCalc = calculations.last {
-                            if !(lastCalc.calc == temp.calc && lastCalc.result == temp.result) {
+                        } else {
+                            sessionCalculations[0].result = sessionCalculations[0].calc
+                            sessionCalculations[0].calc = String(result!)
+                            actualCalc = String(result!)
+                            ans = String(result!)
+                            didDoMath = true
+                            let temp = Calculation(calc: sessionCalculations[0].calc, result: sessionCalculations[0].result)
+                            if let lastCalc = calculations.last {
+                                if !(lastCalc.calc == temp.calc && lastCalc.result == temp.result) {
+                                    if !(temp.calc == "0" && temp.result == "　") {
+                                        calculations.append(temp)
+                                        print(calculations)
+                                        Calculation.saveToFile(calcs: calculations)
+                                    }
+                                }
+                            } else {
                                 if !(temp.calc == "0" && temp.result == "　") {
                                     calculations.append(temp)
                                     print(calculations)
                                     Calculation.saveToFile(calcs: calculations)
+                                    
                                 }
-                            }
-                        } else {
-                            if !(temp.calc == "0" && temp.result == "　") {
-                                calculations.append(temp)
-                                print(calculations)
-                                Calculation.saveToFile(calcs: calculations)
+                                
                             }
                         }
                     }
-                self.tableView.reloadData()
-                didDoMath = true
+                    
+                    
+                    didDoMath = true
+                    self.tableView.reloadData()
                 }
              case "Del":
                 if sessionCalculations[0].calc.count == 0 || actualCalc.count == 0 {
