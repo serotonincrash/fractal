@@ -15,7 +15,7 @@ class CalcTableViewController: UITableViewController {
     var ans: String = "0"
     var didDoMath: Bool = true
     var actualCalc = "0"
-    let operationsWith3Chars = [" + "," - "," × "," ÷ ","ln("]
+    let operationsWith3Chars = [" + "," - "," × "," ÷ ","ln(","$an"]
     let operationsWith3CharsNonSpaced = ["e()","π()"]
     let operationsWith4Chars = ["sin(","cos(","tan(","log(","exp("]
     let operationsWith5Chars = ["asin(","acos(","atan("," mod ","log2(","($an)"]
@@ -38,7 +38,9 @@ class CalcTableViewController: UITableViewController {
     // MARK: Actually adding the data to the UILabels
     
     func evalData(data: String) {
-        print(didDoMath)
+        if sessionCalculations[0].calc == "" || sessionCalculations[0].result == "" {
+            
+        }
         if didDoMath {
             didDoMath = false
             switch data {
@@ -51,12 +53,14 @@ class CalcTableViewController: UITableViewController {
                     sessionCalculations[0].result = "Error"
                     sessionCalculations[0].calc = "　"
                     ans = "0"
+                    actualCalc = ""
                     self.tableView.reloadData()
                 } else {
                         if result == "inf" {
                             sessionCalculations[0].calc = "Number too large"
                             sessionCalculations[0].result = "　"
                             ans = "0"
+                            actualCalc = ""
                             self.tableView.reloadData()
                         } else {
                             if Decimal(string: result!)!.isWholeNumber {
@@ -185,7 +189,7 @@ class CalcTableViewController: UITableViewController {
                 }  else if actualCalc.count < 9 {
                     sessionCalculations[0].calc.removeLast()
                     actualCalc.removeLast()
-                    self.tableView.reloadData()
+                    self.tableView.reloadData()		
                 } else {
                     sessionCalculations[0].calc.removeLast()
                     actualCalc.removeLast()
@@ -204,13 +208,13 @@ class CalcTableViewController: UITableViewController {
                     
                 } else if Double(ans)?.truncatingRemainder(dividingBy: 1) == 0 {
                     print("ans inserted")
-                    sessionCalculations[0].calc = "(Ans)"
-                    actualCalc = "($an)"
+                    sessionCalculations[0].calc = "Ans"
+                    actualCalc = "$an"
                     self.tableView.reloadData()
                 } else {
                     print("ans inserted")
-                    sessionCalculations[0].calc = "(Ans)"
-                    actualCalc = "($an)"
+                    sessionCalculations[0].calc = "Ans"
+                    actualCalc = "$an"
                     self.tableView.reloadData()
                 }
             case "log2(":
@@ -258,16 +262,18 @@ class CalcTableViewController: UITableViewController {
                     sessionCalculations[0].result = "Error"
                     sessionCalculations[0].calc = "　"
                     ans = "0"
+                    actualCalc = ""
                     self.tableView.reloadData()
                 } else {
                     if result == "inf" {
                         sessionCalculations[0].calc = "Number too large"
                         sessionCalculations[0].result = "　"
                         ans = "0"
+                        actualCalc = ""
                         self.tableView.reloadData()
                     } else {
                         let decimal = Decimal(string: result!)
-                        if Decimal(string: result!)!.isWholeNumber {
+                        if decimal!.isWholeNumber {
                             sessionCalculations[0].result = sessionCalculations[0].calc
                             sessionCalculations[0].calc = String(result!)
                             actualCalc = String(result!)
@@ -371,7 +377,6 @@ class CalcTableViewController: UITableViewController {
                         actualCalc = String(actualCalc[0..<actualCalc.count - 4])
                         self.tableView.reloadData()
                     }
-
                 } else if actualCalc.count < 5 {
                     sessionCalculations[0].calc.removeLast()
                     actualCalc.removeLast()
@@ -411,25 +416,15 @@ class CalcTableViewController: UITableViewController {
                 print(ans)
                 if ans == "0.0" || ans == "0" {
                     
-                } else if Double(ans)?.truncatingRemainder(dividingBy: 1) == 0 {
-                    if actualCalc == "0" {
-                        sessionCalculations[0].calc = "(Ans)"
-                        actualCalc = "($an)"
-                        self.tableView.reloadData()
-                    } else {
-                            sessionCalculations[0].calc = sessionCalculations[0].calc + "(Ans)"
-                            actualCalc = actualCalc + "($an)"
-                            self.tableView.reloadData()
-                    }
                 } else {
                     if actualCalc == "0" {
-                        sessionCalculations[0].calc = "(Ans)"
-                        actualCalc = "($an)"
+                        sessionCalculations[0].calc = "Ans"
+                        actualCalc = "$an"
                         self.tableView.reloadData()
                     } else {
-                        sessionCalculations[0].calc = sessionCalculations[0].calc + "(Ans)"
-                        actualCalc = actualCalc + "($an)"
-                        self.tableView.reloadData()
+                            sessionCalculations[0].calc = sessionCalculations[0].calc + "Ans"
+                            actualCalc = actualCalc + "$an"
+                            self.tableView.reloadData()
                     }
                 }
              case "e()":
@@ -445,13 +440,17 @@ class CalcTableViewController: UITableViewController {
                 actualCalc = actualCalc + "log2("
                 self.tableView.reloadData()
              default:
+                if actualCalc != "0" {
                     sessionCalculations[0].calc = sessionCalculations[0].calc + data
                     actualCalc = actualCalc + data
                     self.tableView.reloadData()
+                } else {
+                    sessionCalculations[0].calc = sessionCalculations[0].calc + data
+                    actualCalc = data
+                    self.tableView.reloadData()		
+                }
             }
         }
-        print(actualCalc)
-        print("label text",sessionCalculations[0].calc)
         self.tableView.reloadData()
     }
 
@@ -473,12 +472,10 @@ class CalcTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "calcCell")
         //You can apply reverse effect only set delegate.
         tableView.re.delegate = self
-        
         let calcCell = cell.calculationLabel
         let resultCell = cell.resultLabel
         calcCell?.text = sessionCalculations[indexPath.row].result
         resultCell?.text = sessionCalculations[indexPath.row].calc
-        print("updated resultCell with", sessionCalculations[indexPath.row].calc)
         // Configure the cell...
 
         return cell

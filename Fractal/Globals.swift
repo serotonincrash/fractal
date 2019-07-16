@@ -42,27 +42,47 @@ var angleMeasurement: Evaluator.AngleMode {
 // Parsing function
 func parseMath(calc: String, ans: String) -> String? {
     evaluator.angleMeasurementMode = angleMeasurement
-    var result: Decimal = 0
+    var result: Double = 0
     
+
     let subs = ["an": (ans)]
         do {
-            result = try Decimal(floatLiteral: evaluator.evaluate(Expression(string: calc), substitutions: subs as! Substitutions))
+            result = try evaluator.evaluate(Expression(string: calc), substitutions: subs as Substitutions)
         } catch {
             let error = error as! MathParserError
             print(error.range)
-            return "error"
+         return "error"
         }
-    if result > 10000000000 || result < 0.00000000001 {
+    if String(result) == "nan" {
+        return "error"
+    }
+    if result > 10000000000 || (0 < result && result < 0.00000000001) || (0 > result && result < -0.00000000001)  {
         formatter.numberStyle = .scientific
         formatter.exponentSymbol = "×10^"
+        formatter.maximumFractionDigits = decimalPlaces
+        
+    } else {
+        let decimal = Decimal(string: String(result))
+        print(decimal)
+        if (decimal?.isWholeNumber)! {
+            formatter.numberStyle = .none
+        } else {
+            // else we assume it's a normal decimal, irrational or whatever, and format it accordingly
+            formatter.numberStyle = .decimal
+            formatter.usesGroupingSeparator = false
+            formatter.maximumFractionDigits = decimalPlaces
+            
+        }
     }
-    print("result",result)
     return formatter.string(for: result)
 }
 let formatter = NumberFormatter()
 
+// Round function
+func round(number: Double, precision: Int) {
+    return
+}
 
-// Is it an integer?
 
 
 
