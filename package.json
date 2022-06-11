@@ -1,0 +1,23 @@
+{
+  "name": "fractal",
+  "version": "1.0.0",
+  "description": "Package for expression evaluation in Fractal iOS calculator",
+  "main": "index.js",
+  "scripts": {
+      "build": "echo \"Please do this sometime\"",
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serotonincrash/fractal.git"
+  },
+  "author": "Sean Wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/serotonincrash/fractal/issues"
+  },
+  "homepage": "https://github.com/serotonincrash/fractal#readme",
+  "dependencies": {
+    "mathjs": "^10.5.0"
+  }
+}

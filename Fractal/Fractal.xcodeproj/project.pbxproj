@@ -7,27 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6060392280436A000D6F0A0 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6060390280436A000D6F0A0 /* DeleteButton.swift */; };
+		A6060396280A552300D6F0A0 /* Evaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6060394280A552300D6F0A0 /* Evaluator.swift */; };
+		A6060399280A55E300D6F0A0 /* EvaluatorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6060397280A55E300D6F0A0 /* EvaluatorSettings.swift */; };
 		A664CE5828001EB900E42FD0 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE5728001EB900E42FD0 /* Tests_iOS.swift */; };
 		A664CE5A28001EB900E42FD0 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE5928001EB900E42FD0 /* Tests_iOSLaunchTests.swift */; };
 		A664CE6428001EB900E42FD0 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE6328001EB900E42FD0 /* Tests_macOS.swift */; };
 		A664CE6628001EB900E42FD0 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE6528001EB900E42FD0 /* Tests_macOSLaunchTests.swift */; };
-		A664CE6728001EB900E42FD0 /* FractalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE3F28001EB800E42FD0 /* FractalApp.swift */; };
 		A664CE6828001EB900E42FD0 /* FractalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE3F28001EB800E42FD0 /* FractalApp.swift */; };
-		A664CE6928001EB900E42FD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE4028001EB800E42FD0 /* ContentView.swift */; };
-		A664CE6A28001EB900E42FD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE4028001EB800E42FD0 /* ContentView.swift */; };
+		A664CE6A28001EB900E42FD0 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE4028001EB800E42FD0 /* CalculatorView.swift */; };
 		A664CE6B28001EB900E42FD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A664CE4128001EB900E42FD0 /* Assets.xcassets */; };
 		A664CE6C28001EB900E42FD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A664CE4128001EB900E42FD0 /* Assets.xcassets */; };
 		A664CE7C28001FA700E42FD0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A664CE7B28001FA700E42FD0 /* README.md */; };
+		A664CE8328041CE600E42FD0 /* CalcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A664CE8128041CE600E42FD0 /* CalcButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A664CE5428001EB900E42FD0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A664CE3A28001EB800E42FD0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A664CE4528001EB900E42FD0;
-			remoteInfo = "Fractal (iOS)";
-		};
 		A664CE6028001EB900E42FD0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A664CE3A28001EB800E42FD0 /* Project object */;
@@ -35,11 +30,35 @@
 			remoteGlobalIDString = A664CE4B28001EB900E42FD0;
 			remoteInfo = "Fractal (macOS)";
 		};
+		A6ED5A67281F089000F38FC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A664CE3A28001EB800E42FD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6ED5A61281F07DC00F38FC5;
+			remoteInfo = "fractal-evaluator";
+		};
+		A6ED5A6B281F089F00F38FC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A664CE3A28001EB800E42FD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6ED5A61281F07DC00F38FC5;
+			remoteInfo = "fractal-evaluator";
+		};
+		A6ED5A6D281F08AE00F38FC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A664CE3A28001EB800E42FD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A664CE4528001EB900E42FD0;
+			remoteInfo = "Fractal (iOS)";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A6060390280436A000D6F0A0 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		A6060394280A552300D6F0A0 /* Evaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluator.swift; sourceTree = "<group>"; };
+		A6060397280A55E300D6F0A0 /* EvaluatorSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluatorSettings.swift; sourceTree = "<group>"; };
 		A664CE3F28001EB800E42FD0 /* FractalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalApp.swift; sourceTree = "<group>"; };
-		A664CE4028001EB800E42FD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A664CE4028001EB800E42FD0 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		A664CE4128001EB900E42FD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A664CE4628001EB900E42FD0 /* Fractal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fractal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A664CE4C28001EB900E42FD0 /* Fractal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fractal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +70,10 @@
 		A664CE6328001EB900E42FD0 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		A664CE6528001EB900E42FD0 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		A664CE7B28001FA700E42FD0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A664CE8128041CE600E42FD0 /* CalcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcButton.swift; sourceTree = "<group>"; };
+		A6ED5A66281F082300F38FC5 /* evaluator.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = evaluator.js; sourceTree = "<group>"; };
+		A6ED5A6F281F092400F38FC5 /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = package.json; path = ../package.json; sourceTree = "<group>"; };
+		A6ED5A70281F092400F38FC5 /* package-lock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "package-lock.json"; path = "../package-lock.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +108,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6060393280A550500D6F0A0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A6060394280A552300D6F0A0 /* Evaluator.swift */,
+				A6060397280A55E300D6F0A0 /* EvaluatorSettings.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A664CE3928001EB800E42FD0 = {
 			isa = PBXGroup;
 			children = (
+				A6ED5A70281F092400F38FC5 /* package-lock.json */,
+				A6ED5A6F281F092400F38FC5 /* package.json */,
+				A6ED5A65281F07F100F38FC5 /* js */,
 				A664CE7B28001FA700E42FD0 /* README.md */,
 				A664CE3E28001EB800E42FD0 /* Shared */,
 				A664CE4D28001EB900E42FD0 /* macOS */,
@@ -100,8 +135,10 @@
 		A664CE3E28001EB800E42FD0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A6060393280A550500D6F0A0 /* Helpers */,
+				A664CE8028041CD500E42FD0 /* Components */,
 				A664CE3F28001EB800E42FD0 /* FractalApp.swift */,
-				A664CE4028001EB800E42FD0 /* ContentView.swift */,
+				A664CE4028001EB800E42FD0 /* CalculatorView.swift */,
 				A664CE4128001EB900E42FD0 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -144,7 +181,41 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		A664CE8028041CD500E42FD0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A664CE8128041CE600E42FD0 /* CalcButton.swift */,
+				A6060390280436A000D6F0A0 /* DeleteButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A6ED5A65281F07F100F38FC5 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				A6ED5A66281F082300F38FC5 /* evaluator.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		A6ED5A61281F07DC00F38FC5 /* fractal-evaluator */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "npm run build";
+			buildConfigurationList = A6ED5A62281F07DC00F38FC5 /* Build configuration list for PBXLegacyTarget "fractal-evaluator" */;
+			buildPhases = (
+			);
+			buildToolPath = /bin/bash;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "fractal-evaluator";
+			passBuildSettingsInEnvironment = 1;
+			productName = "fractal-evaluator";
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		A664CE4528001EB900E42FD0 /* Fractal (iOS) */ = {
@@ -158,6 +229,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A6ED5A68281F089000F38FC5 /* PBXTargetDependency */,
 			);
 			name = "Fractal (iOS)";
 			productName = "Fractal (iOS)";
@@ -175,6 +247,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A6ED5A6C281F089F00F38FC5 /* PBXTargetDependency */,
 			);
 			name = "Fractal (macOS)";
 			productName = "Fractal (macOS)";
@@ -192,7 +265,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				A664CE5528001EB900E42FD0 /* PBXTargetDependency */,
+				A6ED5A6E281F08AE00F38FC5 /* PBXTargetDependency */,
 			);
 			name = "Tests iOS";
 			productName = "Tests iOS";
@@ -241,6 +314,9 @@
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = A664CE4B28001EB900E42FD0;
 					};
+					A6ED5A61281F07DC00F38FC5 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 				};
 			};
 			buildConfigurationList = A664CE3D28001EB800E42FD0 /* Build configuration list for PBXProject "Fractal" */;
@@ -260,6 +336,7 @@
 				A664CE4B28001EB900E42FD0 /* Fractal (macOS) */,
 				A664CE5228001EB900E42FD0 /* Tests iOS */,
 				A664CE5E28001EB900E42FD0 /* Tests macOS */,
+				A6ED5A61281F07DC00F38FC5 /* fractal-evaluator */,
 			);
 		};
 /* End PBXProject section */
@@ -303,8 +380,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A664CE6928001EB900E42FD0 /* ContentView.swift in Sources */,
-				A664CE6728001EB900E42FD0 /* FractalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +387,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A664CE6A28001EB900E42FD0 /* ContentView.swift in Sources */,
+				A6060396280A552300D6F0A0 /* Evaluator.swift in Sources */,
+				A6060392280436A000D6F0A0 /* DeleteButton.swift in Sources */,
+				A6060399280A55E300D6F0A0 /* EvaluatorSettings.swift in Sources */,
+				A664CE6A28001EB900E42FD0 /* CalculatorView.swift in Sources */,
+				A664CE8328041CE600E42FD0 /* CalcButton.swift in Sources */,
 				A664CE6828001EB900E42FD0 /* FractalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,15 +417,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A664CE5528001EB900E42FD0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A664CE4528001EB900E42FD0 /* Fractal (iOS) */;
-			targetProxy = A664CE5428001EB900E42FD0 /* PBXContainerItemProxy */;
-		};
 		A664CE6128001EB900E42FD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A664CE4B28001EB900E42FD0 /* Fractal (macOS) */;
 			targetProxy = A664CE6028001EB900E42FD0 /* PBXContainerItemProxy */;
+		};
+		A6ED5A68281F089000F38FC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6ED5A61281F07DC00F38FC5 /* fractal-evaluator */;
+			targetProxy = A6ED5A67281F089000F38FC5 /* PBXContainerItemProxy */;
+		};
+		A6ED5A6C281F089F00F38FC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6ED5A61281F07DC00F38FC5 /* fractal-evaluator */;
+			targetProxy = A6ED5A6B281F089F00F38FC5 /* PBXContainerItemProxy */;
+		};
+		A6ED5A6E281F08AE00F38FC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A664CE4528001EB900E42FD0 /* Fractal (iOS) */;
+			targetProxy = A6ED5A6D281F08AE00F38FC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -475,6 +564,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -505,6 +595,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -582,7 +673,6 @@
 		A664CE7628001EB900E42FD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XL5JK4F896;
@@ -602,7 +692,6 @@
 		A664CE7728001EB900E42FD0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XL5JK4F896;
@@ -658,6 +747,33 @@
 			};
 			name = Release;
 		};
+		A6ED5A63281F07DC00F38FC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XL5JK4F896;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A6ED5A64281F07DC00F38FC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XL5JK4F896;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -702,6 +818,15 @@
 			buildConfigurations = (
 				A664CE7928001EB900E42FD0 /* Debug */,
 				A664CE7A28001EB900E42FD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6ED5A62281F07DC00F38FC5 /* Build configuration list for PBXLegacyTarget "fractal-evaluator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6ED5A63281F07DC00F38FC5 /* Debug */,
+				A6ED5A64281F07DC00F38FC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
